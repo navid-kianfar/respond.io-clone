@@ -61,5 +61,39 @@
     line-height: normal;
     position: relative;
   }
+  .v-avatar {
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+    background: rgb(169, 218, 255);
+    border-color: rgb(169, 218, 255);
+  }
 
+  .user-avatar {
+    height: 25px;
+    min-width: 25px;
+    width: 25px;
+    max-height: 25px;
+    max-width: 25px;
+    background: rgb(224, 224, 224);
+
+    .v-icon {
+      font-size: 25px;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  .v-list-item__icon {
+    span.v-icon {
+      font-size: 22px;
+      height: 22px;
+      width: 22px;
+      color: rgb(34, 34, 34);
+      caret-color: rgb(34, 34, 34);
+    }
+  }
 }
