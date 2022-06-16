@@ -1,0 +1,36 @@
+.roxana-pages-messages {
+  display: flex;
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    min-width: 230px;
+    max-width: 230px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 5px;
+
+    i {
+      margin: 0 5px;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      background: none;
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  .filter-by-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+    button {
+      width: 100px;
+    }
+  }
+}

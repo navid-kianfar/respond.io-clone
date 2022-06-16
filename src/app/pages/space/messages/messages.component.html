@@ -1,0 +1,51 @@
+<div class="roxana-page roxana-pages-messages">
+  <div *ngIf="showSidebar" class="roxana-column">
+
+    <div class="key-value no-hover">
+      <div class="key bold">Inbox</div>
+      <div (click)="toggleSidebar($event)" class="value">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M20.48 24H3.52C1.922 24 .559 22.64.559 21.04V2.96C.559 1.36 1.922 0 3.519 0H20.48c1.598 0 2.961 1.36 2.961 2.96v18.08c0 1.6-1.363 2.96-2.96 2.96zM3.52 2c-.56 0-.961.398-.961.96v18.08c0 .562.48.96.96.96H20.48c.56 0 .961-.48.961-.96V2.96c0-.562-.48-.96-.96-.96zm0 0 M6.719 1.04h2v22h-2zM16.8 15.762c-.241 0-.48-.082-.722-.32l-2.797-2.801c-.402-.403-.402-1.04 0-1.36l2.797-2.8c.402-.403 1.043-.403 1.363 0 .399.398.399 1.039 0 1.359l-2 2.16 2.079 2.078c.402.402.402 1.043 0 1.363-.239.239-.48.32-.72.32zm0 0"></path></svg>
+      </div>
+    </div>
+
+    <div class="key-value selected" mat-ripple>
+      <div class="key">All</div>
+      <div class="value">0</div>
+    </div>
+
+    <div class="key-value" mat-ripple>
+      <div class="key">Mine</div>
+      <div class="value">0</div>
+    </div>
+
+    <div class="key-value" mat-ripple>
+      <div class="key">Unassigned</div>
+      <div class="value">0</div>
+    </div>
+
+  </div>
+  <div class="roxana-column">
+    <div class="key-value no-hover no-padding justify-content-center">
+      <div *ngIf="!showSidebar" (click)="toggleSidebar($event)" class="value">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M20.48 24H3.52C1.922 24 .559 22.64.559 21.04V2.96C.559 1.36 1.922 0 3.519 0H20.48c1.598 0 2.961 1.36 2.961 2.96v18.08c0 1.6-1.363 2.96-2.96 2.96zM3.52 2c-.56 0-.961.398-.961.96v18.08c0 .562.48.96.96.96H20.48c.56 0 .961-.48.961-.96V2.96c0-.562-.48-.96-.96-.96zm0 0 M6.719 1.04h2v22h-2zM16.8 15.762c-.241 0-.48-.082-.722-.32l-2.797-2.801c-.402-.403-.402-1.04 0-1.36l2.797-2.8c.402-.403 1.043-.403 1.363 0 .399.398.399 1.039 0 1.359l-2 2.16 2.079 2.078c.402.402.402 1.043 0 1.363-.239.239-.48.32-.72.32zm0 0"></path></svg>
+      </div>
+      <div class="key">
+        <div class="search-wrapper">
+          <i class="rox-icon-search"></i>
+          <input type="text" placeholder="search here...">
+          <i class="rox-icon-filter"></i>
+        </div>
+      </div>
+    </div>
+    <div class="filter-by-wrapper">
+      <button mat-flat-button>
+        <span>Open</span>
+        <i class="rox-icon-chevron-down"></i>
+      </button>
+      <button mat-flat-button>
+        <span>Newest</span>
+        <i class="rox-icon-chevron-down"></i>
+      </button>
+    </div>
+  </div>
+</div>

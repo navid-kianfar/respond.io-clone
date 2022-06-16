@@ -1,99 +1,42 @@
-.v-navigation-drawer__content {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+.roxana-rav-bar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid #e0e0e0!important;
+  height: 100vh;
 
-  .v-sheet {
-    background-color: #fff;
-    border-color: #fff;
-    color: rgba(0,0,0,.87);
-    box-shadow: 0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%);
-  }
-
-  .v-list-item {
+  .nav-avatar {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    flex: 1 1 100%;
-    letter-spacing: normal;
-    min-height: 48px;
-    outline: none;
-    padding: 0 16px;
-    position: relative;
-    text-decoration: none;
-    color: rgba(0,0,0,.87)!important;
-  }
-  .v-btn.v-btn--icon {
-    color: rgba(0,0,0,.54);
-  }
-  .v-btn--icon.v-size--default {
-    height: 36px;
-    width: 36px;
-  }
-  .v-btn:not(.v-btn--disabled) {
-    will-change: box-shadow;
-  }
-  .v-btn:before {
-    border-radius: inherit;
-    bottom: 0;
-    color: inherit;
-    content: "";
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: opacity .2s cubic-bezier(.4,0,.6,1);
-    background-color: currentColor;
-  }
-  .v-btn__content {
-    align-items: center;
-    color: inherit;
-    display: flex;
-    flex: 1 0 auto;
-    justify-content: inherit;
-    line-height: normal;
-    position: relative;
-  }
-  .v-avatar {
-    height: 36px;
-    min-width: 36px;
-    width: 36px;
-    background: rgb(169, 218, 255);
-    border-color: rgb(169, 218, 255);
-  }
+    padding: 10px 0;
 
-  .user-avatar {
-    height: 25px;
-    min-width: 25px;
-    width: 25px;
-    max-height: 25px;
-    max-width: 25px;
-    background: rgb(224, 224, 224);
-
-    .v-icon {
-      font-size: 25px;
-      height: 25px;
-      width: 25px;
-      position: absolute;
-      top: 0px;
-      left: 0px;
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: red;
     }
   }
 
-  .v-list-item__icon {
-    span.v-icon {
-      font-size: 22px;
-      height: 22px;
-      width: 22px;
-      color: rgb(34, 34, 34);
-      caret-color: rgb(34, 34, 34);
+  .roxana-rav-bar-list {
+    .nav-item {
+      cursor: pointer;
+      a {
+        display: flex;
+        padding: 17px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        i {
+          font-size: 21px;
+        }
+      }
     }
   }
 }

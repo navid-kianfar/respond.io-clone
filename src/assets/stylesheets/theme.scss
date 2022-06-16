@@ -1,8 +1,5 @@
-app-navbar {
-  max-width: 60px;
-  background: rgb(237, 237, 237) !important;
-
-  .v-sheet {
-    background: rgb(237, 237, 237) !important;
-  }
-}
+@import "theme-shared";
+@import "theme-ltr";
+@import "theme-rtl";
+@import "theme-light";
+@import "theme-dark";

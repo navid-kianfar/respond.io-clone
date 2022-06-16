@@ -1,0 +1,147 @@
+.roxana-light {
+  --v-anchor-base: #448aff;
+  --v-primary-base: #448aff;
+  --v-primary-lighten5: #e8ffff;
+  --v-primary-lighten4: #c9f7ff;
+  --v-primary-lighten3: #a9daff;
+  --v-primary-lighten2: #8abfff;
+  --v-primary-lighten1: #69a4ff;
+  --v-primary-darken1: #0171e2;
+  --v-primary-darken2: #0059c5;
+  --v-primary-darken3: #0042aa;
+  --v-primary-darken4: #002e8e;
+  --v-secondary-base: #00a354;
+  --v-secondary-lighten5: #b3ffd9;
+  --v-secondary-lighten4: #96ffbd;
+  --v-secondary-lighten3: #78f8a1;
+  --v-secondary-lighten2: #5adb87;
+  --v-secondary-lighten1: #38bf6d;
+  --v-secondary-darken1: #00883c;
+  --v-secondary-darken2: #006e24;
+  --v-secondary-darken3: #00540c;
+  --v-secondary-darken4: #003b00;
+  --v-accent-base: #82b1ff;
+  --v-accent-lighten5: #ffffff;
+  --v-accent-lighten4: #f8ffff;
+  --v-accent-lighten3: #daffff;
+  --v-accent-lighten2: #bce8ff;
+  --v-accent-lighten1: #9fccff;
+  --v-accent-darken1: #6596e2;
+  --v-accent-darken2: #467dc6;
+  --v-accent-darken3: #2364aa;
+  --v-accent-darken4: #004c90;
+  --v-error-base: #ff5252;
+  --v-error-lighten5: #ffe4d5;
+  --v-error-lighten4: #ffc6b9;
+  --v-error-lighten3: #ffa99e;
+  --v-error-lighten2: #ff8c84;
+  --v-error-lighten1: #ff6f6a;
+  --v-error-darken1: #df323b;
+  --v-error-darken2: #bf0025;
+  --v-error-darken3: #9f0010;
+  --v-error-darken4: #800000;
+  --v-info-base: #2196f3;
+  --v-info-lighten5: #d4ffff;
+  --v-info-lighten4: #b5ffff;
+  --v-info-lighten3: #95e8ff;
+  --v-info-lighten2: #75ccff;
+  --v-info-lighten1: #51b0ff;
+  --v-info-darken1: #007cd6;
+  --v-info-darken2: #0064ba;
+  --v-info-darken3: #004d9f;
+  --v-info-darken4: #003784;
+  --v-success-base: #00a354;
+  --v-success-lighten5: #b3ffd9;
+  --v-success-lighten4: #96ffbd;
+  --v-success-lighten3: #78f8a1;
+  --v-success-lighten2: #5adb87;
+  --v-success-lighten1: #38bf6d;
+  --v-success-darken1: #00883c;
+  --v-success-darken2: #006e24;
+  --v-success-darken3: #00540c;
+  --v-success-darken4: #003b00;
+  --v-warning-base: #fb8c00;
+  --v-warning-lighten5: #ffff9e;
+  --v-warning-lighten4: #fffb82;
+  --v-warning-lighten3: #ffdf67;
+  --v-warning-lighten2: #ffc24b;
+  --v-warning-lighten1: #ffa72d;
+  --v-warning-darken1: #db7200;
+  --v-warning-darken2: #bb5900;
+  --v-warning-darken3: #9d4000;
+  --v-warning-darken4: #802700;
+  --v-base-grey-base: #ededed;
+  --v-base-grey-lighten5: #ffffff;
+  --v-base-grey-lighten4: #ffffff;
+  --v-base-grey-lighten3: #ffffff;
+  --v-base-grey-lighten2: #ffffff;
+  --v-base-grey-lighten1: #ffffff;
+  --v-base-grey-lighten0: #f1f1f1;
+  --v-base-grey-darken1: #d1d1d1;
+  --v-base-grey-darken2: #b5b5b5;
+  --v-base-grey-darken3: #9a9a9a;
+  --v-base-grey-darken4: #808080;
+  --v-base-black: rgba(0,0,0,.87);
+
+  &.roxana-application {
+    background: #fff;
+    color: var(--v-base-black);
+    .roxana-application-wrapper {
+      .roxana-layout {
+        .roxana-rav-bar {
+          background: var(--v-base-grey-base);
+          .nav-avatar {
+            button {
+              background: #a9dbff;
+              span {
+                color: #3284e7;
+              }
+            }
+          }
+          .nav-item {
+            a {
+              i {
+                color: var(--v-base-black);
+              }
+            }
+            &.selected {
+              background: var(--v-base-grey-lighten0);
+              i {
+                color: var(--v-primary-base);
+              }
+            }
+            &:hover {
+              background: var(--v-base-grey-darken1);
+            }
+          }
+        }
+        .roxana-column {
+          background: #f5f5f5;
+          border-color: #e0e0e0;
+          .key-value {
+            &.selected {
+              background: #eaeaea;
+              i {
+                color: var(--v-primary-base);
+              }
+            }
+            &:hover:not(.no-hover) {
+              background: var(--v-base-grey-darken1);
+            }
+          }
+          .search-wrapper {
+            border-color: #e0e0e0;
+            background: #ffffff;
+            i {
+              color: var(--v-base-black);
+            }
+          }
+
+          .filter-by-wrapper {
+            border-color: #e0e0e0;
+          }
+        }
+      }
+    }
+  }
+}

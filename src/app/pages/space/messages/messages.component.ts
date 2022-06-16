@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
-
+  showSidebar: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleSidebar($event: MouseEvent) {
+    this.showSidebar = !this.showSidebar;
+  }
 }
