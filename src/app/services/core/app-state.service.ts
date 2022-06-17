@@ -3,6 +3,8 @@ import {IdentityDto, IdentityProfileDto} from "../../dtos/account-dtos";
 import { NavigationDto } from '../../dtos/layout-dtos';
 import {OrganizationDto} from "../../dtos/organization-dtos";
 import {WorkspaceDto} from "../../dtos/workspace-dtos";
+import {StorageService} from "./storage.service";
+import {APP_TOKEN_KEY} from "../../lib/constsnts";
 
 @Injectable({
   providedIn: 'root'
@@ -14,4 +16,13 @@ export class AppStateService {
   organization?: OrganizationDto = undefined;
   profile?: IdentityProfileDto = undefined;
   identity?: IdentityDto = undefined;
+
+  constructor(
+    private readonly storageService: StorageService
+  ) {
+    const identity = this.storageService.get(APP_TOKEN_KEY);
+    if (identity) {
+      this.identity = JSON.parse(identity);
+    }
+  }
 }

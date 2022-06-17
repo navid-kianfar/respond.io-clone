@@ -85,6 +85,7 @@ import {EnterToBrPipe} from "./pipes/enter-to-br.pipe";
 import {CulturedDatePipe} from "./pipes/cultured-date.pipe";
 import {AnonymousGuard} from "./guards/anonymous.guard";
 import {AuthGuard} from "./guards/auth.guard";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import {AuthGuard} from "./guards/auth.guard";
     MatMenuModule,
     HttpClientModule,
     MatSnackBarModule,
+    FormsModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

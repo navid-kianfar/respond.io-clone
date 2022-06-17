@@ -1,3 +1,21 @@
 {
-
+  "APP_NAME": "ROXANA.IO",
+  "SIGNIN_TO_ACCOUNT": "Signin to your account",
+  "ENTER_YOUR_EMAIL": "Enter your email address",
+  "PROVIDE_EMAIL": "Please provide an email address",
+  "ENTER_YOUR_PASSWORD": "Enter your password",
+  "PASSWORD_REQUIRED": "Password is required",
+  "SIGNIN": "Signin",
+  "OR": "or",
+  "SIGNIN_WITH_GOOGLE": "Signin with Google",
+  "FORGOT_PASSWORD": "Forgot Password",
+  "NEED_ACCOUNT": "Need an account",
+  "RESET_YOUR_PASSWORD": "Reset your password",
+  "RESET_YOUR_PASSWORD_NOTE": "Enter the email address you used when you signed up and we’ll send you instructions to reset your password.",
+  "SEND_RESET_INSTRUCTIONS": "Send Reset Instructions",
+  "SIGNIN_NOW": "Signin now",
+  "GET_STARTED": "Get started",
+  "SIGNUP_WITH_GOOGLE": "Signup with google",
+  "TRY_ROXANA_FREE": "Try Roxana.io for free",
+  "TRY_ROXANA_FREE_NOTE": "No obligation, no credit card required."
 }

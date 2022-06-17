@@ -3,37 +3,43 @@
     <div class="roxana-centered-box-wrapper">
       <div class="centered-box-header">
         <i class="rox-icon-message-circle"></i>
-        <span>ROXANA.IO</span>
+        <span>{{ 'APP_NAME' | translate }}</span>
       </div>
       <div class="centered-box-content">
-        <div class="heading">Reset your password</div>
+        <div class="heading">{{ 'RESET_YOUR_PASSWORD' | translate }}</div>
         <div class="action-separator">
           <div class="text"></div>
         </div>
         <div class="action-note">
-          Enter the email address you used when you signed up and we’ll send you instructions to reset your password.
+          {{ 'RESET_YOUR_PASSWORD_NOTE' | translate }}
         </div>
         <div class="input-wrappers">
           <div class="input-wrapper">
             <div class="inputs">
               <i class="rox-icon-mail"></i>
-              <input type="text" placeholder="Enter your email address">
+              <input type="text"
+                     [(ngModel)]="forms.email"
+                     [placeholder]="'ENTER_YOUR_EMAIL' | translate ">
             </div>
-            <div class="validation">
-              Please provide an email address
+            <div *ngIf="validations.email" class="validation">
+              {{ validations.email | translate }}
             </div>
           </div>
         </div>
         <div class="action-wrappers">
-          <button mat-ripple>
-            <i class="rox-icon-loader spinner"></i>
-            <span>Send Reset Instructions</span>
+          <button [disabled]="waiting" mat-ripple>
+            <i *ngIf="waiting" class="rox-icon-loader spinner"></i>
+            <span>{{ 'SEND_RESET_INSTRUCTIONS' | translate }}</span>
           </button>
         </div>
       </div>
       <div class="centered-box-footer">
-        <a routerLink="/account/login" href="javascript:void(0)">Signin now</a>
-        <a routerLink="/account/register" href="javascript:void(0)">Need an account</a>
+        <a routerLink="/account/login" href="javascript:void(0)">
+          {{ 'SIGNIN_NOW' | translate }}
+        </a>
+        <a routerLink="/account/register" href="javascript:void(0)">
+          {{ 'NEED_ACCOUNT' | translate }}
+        </a>
       </div>
     </div>
   </div>

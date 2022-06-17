@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  waiting: boolean = false;
+  forms: { email: string; password: string; } = {email: '', password: ''};
+  validations: { email: string; password: string; } = {email: '', password: ''};
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   togglePasswordVisibility($event: MouseEvent, element: HTMLInputElement) {
