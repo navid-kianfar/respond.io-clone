@@ -10,10 +10,12 @@ import {BroadcastComponent} from "./pages/space/broadcast/broadcast.component";
 import {WorkflowsComponent} from "./pages/space/workflows/workflows.component";
 import {ReportsComponent} from "./pages/space/reports/reports.component";
 import {ProfileComponent} from "./pages/account/profile/profile.component";
+import {ForgotComponent} from "./pages/account/forgot/forgot.component";
 
 const routes: Routes = [
   { path: 'account/login', component: LoginComponent },
   { path: 'account/register', component: RegisterComponent },
+  { path: 'account/forgot', component: ForgotComponent },
   { path: 'account/profile', component: ProfileComponent },
   { path: 'account/notifications', component: NotificationsComponent },
   { path: 'space/:space-id/dashboard', component: DashboardComponent },

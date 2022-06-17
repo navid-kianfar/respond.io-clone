@@ -1,4 +1,4 @@
-<div class="roxana-page roxana-pages-login">
+<div class="roxana-page roxana-pages-forgot">
   <div class="roxana-centered-box">
     <div class="roxana-centered-box-wrapper">
       <div class="centered-box-header">
@@ -6,7 +6,13 @@
         <span>ROXANA.IO</span>
       </div>
       <div class="centered-box-content">
-        <div class="heading">Signin to your account</div>
+        <div class="heading">Reset your password</div>
+        <div class="action-separator">
+          <div class="text"></div>
+        </div>
+        <div class="action-note">
+          Enter the email address you used when you signed up and we’ll send you instructions to reset your password.
+        </div>
         <div class="input-wrappers">
           <div class="input-wrapper">
             <div class="inputs">
@@ -17,33 +23,16 @@
               Please provide an email address
             </div>
           </div>
-          <div class="input-wrapper">
-            <div class="inputs">
-              <i class="rox-icon-lock"></i>
-              <input type="password" placeholder="Enter your password">
-              <i class="rox-icon-eye-off"></i>
-            </div>
-            <div class="validation">
-              Password is required
-            </div>
-          </div>
         </div>
         <div class="action-wrappers">
           <button mat-ripple>
             <i class="rox-icon-loader spinner"></i>
-            <span>Signin</span>
-          </button>
-          <div class="action-separator">
-            <div class="text">Or</div>
-          </div>
-          <button mat-ripple>
-            <i class="rox-icon-google3"></i>
-            <span>Signin with Google</span>
+            <span>Send Reset Instructions</span>
           </button>
         </div>
       </div>
       <div class="centered-box-footer">
-        <a routerLink="/account/forgot" href="javascript:void(0)">Forgot Password</a>
+        <a routerLink="/account/login" href="javascript:void(0)">Signin now</a>
         <a routerLink="/account/register" href="javascript:void(0)">Need an account</a>
       </div>
     </div>

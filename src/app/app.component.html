@@ -1,6 +1,9 @@
 <div class="roxana-application roxana-ltr roxana-light">
   <div class="roxana-application-wrapper">
-    <div class="roxana-layout fill-height">
+    <div *ngIf="!identityService.profile" class="roxana-layout">
+      <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="identityService.profile" class="roxana-layout">
       <app-navbar></app-navbar>
       <div class="roxana-main">
         <router-outlet></router-outlet>

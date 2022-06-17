@@ -141,6 +141,81 @@
             border-color: #e0e0e0;
           }
         }
+        .roxana-centered-box {
+          background-color: #f2f2f2;
+          .centered-box-content {
+            background: #fff;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
+            //border-color: #e0e0e0;
+            .input-wrappers {
+              .input-wrapper {
+                .inputs {
+                  border-color: #e0e0e0;
+                  i {
+                    color: #000;
+                  }
+                  input {
+                  }
+                }
+                .validation {
+                  color: var(--v-error-base);
+                }
+
+                &.error {
+                  .inputs {
+                    border-color: var(--v-error-base);
+                    i {
+                      color: var(--v-error-base);
+                    }
+                    input {
+                      color: var(--v-error-base);
+                    }
+                  }
+                }
+              }
+            }
+            .action-wrappers {
+              button {
+                background: var(--v-anchor-base);
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow:
+                  0 3px 1px -2px rgba(0,0,0,.2),
+                  0 2px 2px 0 rgba(0,0,0,.14),
+                  0 1px 5px 0 rgba(0,0,0,.12);
+
+                i {
+                  font-size: 25px;
+                  margin-inline-end: 10px;
+                }
+
+                span {
+                  font-size: 15px;
+                  font-weight: 300;
+                }
+
+                &:disabled {
+                  background: var(--v-base-grey-darken1);
+                }
+              }
+            }
+            .action-separator {
+              color: #9e9e9e;
+              caret-color: #9e9e9e;
+              .text {
+                background: #fff;
+                &:before {
+                  border-color: #ccc;
+                }
+              }
+            }
+            .action-note {
+              color: var(--v-base-grey-darken2);
+            }
+          }
+        }
       }
     }
   }
