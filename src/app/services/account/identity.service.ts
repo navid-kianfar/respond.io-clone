@@ -5,6 +5,7 @@ import {HttpService} from "../core/http.service";
 import {AppStateService} from "../core/app-state.service";
 import {StorageService} from "../core/storage.service";
 import {APP_TOKEN_KEY} from "../../lib/constsnts";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,12 @@ export class IdentityService {
     private readonly httpService: HttpService,
     private readonly appState: AppStateService,
     private readonly storageService: StorageService,
+    private readonly router: Router,
   ) { }
 
   logout() {
-
+    this.storageService.remove(APP_TOKEN_KEY);
+    this.router.navigateByUrl('/account/profile')
   }
 
   async load(): Promise<OperationResult<IdentityProfileDto>> {
@@ -38,6 +41,7 @@ export class IdentityService {
     if (op.status === OperationResultStatus.success) {
       this.appState.identity = op.data;
       this.storageService.set(APP_TOKEN_KEY, this.appState.identity);
+      return op;
     }
     return OperationResult.Failed<IdentitySigninDto>(undefined);
   }

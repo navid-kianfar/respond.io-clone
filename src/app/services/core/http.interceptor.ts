@@ -30,7 +30,7 @@ export class HttpInterceptor implements HttpInterceptor {
       this.appState.identity.token
     ) {
       Object.assign(obj.setHeaders, {
-        Authorization: `Bearer ${this.appState.identity.token}`,
+        Authorization: this.appState.identity.token,
       });
     }
 

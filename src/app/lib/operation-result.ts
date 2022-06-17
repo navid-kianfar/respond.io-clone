@@ -4,6 +4,7 @@ export enum OperationResultStatus {
   notFound = 2,
   failed = 3,
   success = 4,
+  unauthorized = 401,
 }
 
 export class OperationResult<T> {
