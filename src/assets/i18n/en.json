@@ -17,5 +17,6 @@
   "GET_STARTED": "Get started",
   "SIGNUP_WITH_GOOGLE": "Signup with google",
   "TRY_ROXANA_FREE": "Try Roxana.io for free",
-  "TRY_ROXANA_FREE_NOTE": "No obligation, no credit card required."
+  "TRY_ROXANA_FREE_NOTE": "No obligation, no credit card required.",
+  "GENERAL_ERROR": "Oopss! some thing is wrong..."
 }

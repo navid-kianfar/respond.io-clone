@@ -12,7 +12,9 @@
             <div class="inputs">
               <i class="rox-icon-mail"></i>
               <input type="text"
-                     [(ngModel)]="forms.email"
+                     [ngModel]="forms.email"
+                     [disabled]="waiting"
+                     (ngModelChange)="updateEmail($event)"
                      [placeholder]="'ENTER_YOUR_EMAIL' | translate">
             </div>
             <div *ngIf="validations.email" class="validation">
@@ -23,7 +25,9 @@
             <div class="inputs">
               <i class="rox-icon-lock"></i>
               <input #password type="password"
-                     [(ngModel)]="forms.password"
+                     [disabled]="waiting"
+                     [ngModel]="forms.password"
+                     (ngModelChange)="updatePassword($event)"
                      [placeholder]="'ENTER_YOUR_PASSWORD' | translate">
               <i (click)="togglePasswordVisibility($event, password)" class="rox-icon-eye-off"></i>
             </div>
@@ -33,7 +37,7 @@
           </div>
         </div>
         <div class="action-wrappers">
-          <button [disabled]="waiting" mat-ripple>
+          <button (click)="signin()" [disabled]="waiting" mat-ripple>
             <i *ngIf="waiting" class="rox-icon-loader spinner"></i>
             <span>{{ 'SIGNIN' | translate }}</span>
           </button>
