@@ -29,7 +29,8 @@
                      [ngModel]="forms.password"
                      (ngModelChange)="updatePassword($event)"
                      [placeholder]="'ENTER_YOUR_PASSWORD' | translate">
-              <i (click)="togglePasswordVisibility($event, password)" class="rox-icon-eye-off"></i>
+              <i (click)="togglePasswordVisibility($event, password)"
+                 class="rox-icon-eye{{ password.type === 'text' ? '' : '-off' }}"></i>
             </div>
             <div *ngIf="validations.password" class="validation">
               {{ validations.password | translate }}
