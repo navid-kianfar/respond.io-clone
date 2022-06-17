@@ -33,6 +33,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatRippleModule} from "@angular/material/core";
 import { ForgotComponent } from './pages/account/forgot/forgot.component';
+import { ProfileSideBarComponent } from './components/layout/profile-side-bar/profile-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ForgotComponent } from './pages/account/forgot/forgot.component';
     OrganizationSettingUsageComponent,
     OrganizationSettingBillingComponent,
     NavbarComponent,
-    ForgotComponent
+    ForgotComponent,
+    ProfileSideBarComponent
   ],
   imports: [
     BrowserModule,

@@ -12,4 +12,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  togglePasswordVisibility($event: MouseEvent, element: HTMLInputElement) {
+    element.type = element.type === 'text' ? 'password' : 'text';
+  }
 }

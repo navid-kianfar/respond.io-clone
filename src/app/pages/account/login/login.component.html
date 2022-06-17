@@ -20,8 +20,8 @@
           <div class="input-wrapper">
             <div class="inputs">
               <i class="rox-icon-lock"></i>
-              <input type="password" placeholder="Enter your password">
-              <i class="rox-icon-eye-off"></i>
+              <input #password type="password" placeholder="Enter your password">
+              <i (click)="togglePasswordVisibility($event, password)" class="rox-icon-eye-off"></i>
             </div>
             <div class="validation">
               Password is required
@@ -34,7 +34,7 @@
             <span>Signin</span>
           </button>
           <div class="action-separator">
-            <div class="text">Or</div>
+            <div class="text">or</div>
           </div>
           <button mat-ripple>
             <i class="rox-icon-google3"></i>
