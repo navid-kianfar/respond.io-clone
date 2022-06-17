@@ -1,4 +1,5 @@
 export interface IdentityProfileDto {
+  timeZone: string;
 
 }
 export interface IdentityDto {

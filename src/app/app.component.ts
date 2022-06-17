@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('app initializer injected', this.appInitializerProvider);
+    console.log('app initializer injected', this.appInitializerProvider.appState);
   }
 }

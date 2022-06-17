@@ -67,8 +67,22 @@ import {ProfileSideBarComponent} from './components/layout/profile-side-bar/prof
 import {MatMenuModule} from "@angular/material/menu";
 import {LoadingComponent} from './components/layout/loading/loading.component';
 import {HttpInterceptor} from "./services/core/http.interceptor";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AppInitializerFactory, AppInitializerProvider} from "./services/core/app-initializer-provider.service";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {YoutubeUrlPipe} from "./pipes/youtube-url.pipe";
+import {TrustUrlPipe} from "./pipes/trust-url.pipe";
+import {TrustHtmlPipe} from "./pipes/trust-html.pipe";
+import {TruncatePipe} from "./pipes/truncate.pipe";
+import {TranslatePipe} from "./pipes/translate.pipe";
+import {StringFormatPipe} from "./pipes/string-format.pipe";
+import {SearchPipe} from "./pipes/search.pipe";
+import {SanitizeHtmlPipe} from "./pipes/sanisize-html.pipe";
+import {LocalTimePipe} from "./pipes/local-time.pipe";
+import {LocalDatePipe} from "./pipes/local-date.pipe";
+import {FilterPipe} from "./pipes/filter.pipe";
+import {EnterToBrPipe} from "./pipes/enter-to-br.pipe";
+import {CulturedDatePipe} from "./pipes/cultured-date.pipe";
 
 @NgModule({
   declarations: [
@@ -101,7 +115,21 @@ import {AppInitializerFactory, AppInitializerProvider} from "./services/core/app
     NavbarComponent,
     ForgotComponent,
     ProfileSideBarComponent,
-    LoadingComponent
+    LoadingComponent,
+
+    YoutubeUrlPipe,
+    TrustUrlPipe,
+    TrustHtmlPipe,
+    TruncatePipe,
+    TranslatePipe,
+    StringFormatPipe,
+    SearchPipe,
+    SanitizeHtmlPipe,
+    LocalTimePipe,
+    LocalDatePipe,
+    FilterPipe,
+    EnterToBrPipe,
+    CulturedDatePipe,
   ],
   imports: [
     BrowserModule,
@@ -110,6 +138,8 @@ import {AppInitializerFactory, AppInitializerProvider} from "./services/core/app
     MatButtonModule,
     MatRippleModule,
     MatMenuModule,
+    HttpClientModule,
+    MatSnackBarModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

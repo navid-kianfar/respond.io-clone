@@ -80,7 +80,8 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
-            "debug": {
+            "me": {
+              "outputHashing": "all",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -89,7 +90,7 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "debug"
+          "defaultConfiguration": "me"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -99,9 +100,12 @@
             },
             "development": {
               "browserTarget": "roxana-ui:build:development"
+            },
+            "me": {
+              "browserTarget": "roxana-ui:build:me"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "me"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {IdentityService} from "../account/identity.service";
 import {TranslateService} from "./translate.service";
 import {AppStateService} from "./app-state.service";
@@ -11,7 +11,6 @@ export class AppInitializerProvider {
     private readonly translateService: TranslateService,
     private readonly identityService: IdentityService,
     readonly appState: AppStateService,
-    private readonly injector: Injector,
   ) {  }
 
 
