@@ -1,9 +1,12 @@
 <div class="roxana-application roxana-ltr roxana-light">
   <div class="roxana-application-wrapper">
-    <div *ngIf="!identityService.profile" class="roxana-layout">
+    <div *ngIf="!appState.initialized" class="roxana-layout">
+      <app-loading></app-loading>
+    </div>
+    <div *ngIf="appState.initialized && !appState.profile" class="roxana-layout">
       <router-outlet></router-outlet>
     </div>
-    <div *ngIf="identityService.profile" class="roxana-layout">
+    <div *ngIf="appState.initialized && appState.profile" class="roxana-layout">
       <app-navbar></app-navbar>
       <div class="roxana-main">
         <router-outlet></router-outlet>

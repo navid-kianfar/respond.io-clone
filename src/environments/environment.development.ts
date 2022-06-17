@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  api_endpoint: '/proxy-api',
+  production: true,
+  api_endpoint: '',
   lang: 'en',
   culture: 'en-US',
 };
