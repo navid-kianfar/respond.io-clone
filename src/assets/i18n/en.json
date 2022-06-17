@@ -5,6 +5,8 @@
   "PROVIDE_EMAIL": "Please provide an email address",
   "ENTER_YOUR_PASSWORD": "Enter your password",
   "PASSWORD_REQUIRED": "Password is required",
+  "EMAIL_REQUIRED": "Email is required",
+  "EMAIL_INVALID": "Email is not valid",
   "SIGNIN": "Signin",
   "OR": "or",
   "SIGNIN_WITH_GOOGLE": "Signin with Google",
@@ -18,5 +20,6 @@
   "SIGNUP_WITH_GOOGLE": "Signup with google",
   "TRY_ROXANA_FREE": "Try Roxana.io for free",
   "TRY_ROXANA_FREE_NOTE": "No obligation, no credit card required.",
-  "GENERAL_ERROR": "Oopss! some thing is wrong..."
+  "GENERAL_ERROR": "Oopss! some thing is wrong...",
+  "PASSWORD_MIN_LENGTH": "Password should be at-least 6 characters"
 }

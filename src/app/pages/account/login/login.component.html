@@ -8,7 +8,7 @@
       <div class="centered-box-content">
         <div class="heading">{{ 'SIGNIN_TO_ACCOUNT' | translate }}</div>
         <div class="input-wrappers">
-          <div class="input-wrapper">
+          <div class="input-wrapper" [class.error]="validations.email">
             <div class="inputs">
               <i class="rox-icon-mail"></i>
               <input type="text"
@@ -21,7 +21,7 @@
               {{ validations.email | translate }}
             </div>
           </div>
-          <div class="input-wrapper">
+          <div class="input-wrapper" [class.error]="validations.password">
             <div class="inputs">
               <i class="rox-icon-lock"></i>
               <input #password type="password"
