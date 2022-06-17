@@ -56,37 +56,39 @@ import {
 import {
   OrganizationSettingUsersComponent
 } from "./pages/organization/settings/organization-setting-users/organization-setting-users.component";
+import {AuthGuard} from "./guards/auth.guard";
+import {AnonymousGuard} from "./guards/anonymous.guard";
 
 const routes: Routes = [
-  { path: 'account/login', component: LoginComponent },
-  { path: 'account/register', component: RegisterComponent },
-  { path: 'account/forgot', component: ForgotComponent },
-  { path: 'account/profile', component: ProfileComponent },
-  { path: 'account/notifications', component: NotificationsComponent },
+  { path: 'account/login', component: LoginComponent, canActivate: [AnonymousGuard] },
+  { path: 'account/register', component: RegisterComponent, canActivate: [AnonymousGuard] },
+  { path: 'account/forgot', component: ForgotComponent, canActivate: [AnonymousGuard] },
+  { path: 'account/profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'account/notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
 
-  { path: 'space/:space-id/dashboard', component: DashboardComponent },
-  { path: 'space/:space-id/message', component: MessagesComponent },
-  { path: 'space/:space-id/contact', component: ContactsComponent },
-  { path: 'space/:space-id/broadcast', component: BroadcastComponent },
-  { path: 'space/:space-id/workflows', component: WorkflowsComponent },
-  { path: 'space/:space-id/reports', component: ReportsComponent },
-  { path: 'space/:space-id/settings/general', component: WorkspaceSettingGeneralComponent },
-  { path: 'space/:space-id/settings/users', component: WorkspaceSettingUsersComponent },
-  { path: 'space/:space-id/settings/teams', component: WorkspaceSettingTeamsComponent },
-  { path: 'space/:space-id/settings/channels', component: WorkspaceSettingChannelsComponent },
-  { path: 'space/:space-id/settings/contact-fields', component: WorkspaceSettingContactFieldsComponent },
-  { path: 'space/:space-id/settings/integrations', component: WorkspaceSettingIntegrationsComponent },
-  { path: 'space/:space-id/settings/closing-notes', component: WorkspaceSettingClosingNotesComponent },
-  { path: 'space/:space-id/settings/snippets', component: WorkspaceSettingSnippetsComponent },
-  { path: 'space/:space-id/settings/files', component: WorkspaceSettingFilesComponent },
-  { path: 'space/:space-id/settings/export', component: WorkspaceSettingExportComponent },
+  { path: 'space/:space-id/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/message', component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/contact', component: ContactsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/broadcast', component: BroadcastComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/workflows', component: WorkflowsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/reports', component: ReportsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/general', component: WorkspaceSettingGeneralComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/users', component: WorkspaceSettingUsersComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/teams', component: WorkspaceSettingTeamsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/channels', component: WorkspaceSettingChannelsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/contact-fields', component: WorkspaceSettingContactFieldsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/integrations', component: WorkspaceSettingIntegrationsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/closing-notes', component: WorkspaceSettingClosingNotesComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/snippets', component: WorkspaceSettingSnippetsComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/files', component: WorkspaceSettingFilesComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/settings/export', component: WorkspaceSettingExportComponent, canActivate: [AuthGuard] },
 
 
-  { path: 'organization/:organization-id/settings/general', component: OrganizationSettingGeneralComponent },
-  { path: 'organization/:organization-id/settings/users', component: OrganizationSettingUsersComponent },
-  { path: 'organization/:organization-id/settings/workspaces', component: OrganizationSettingWorkspacesComponent },
-  { path: 'organization/:organization-id/settings/usage', component: OrganizationSettingUsageComponent },
-  { path: 'organization/:organization-id/settings/billing', component: OrganizationSettingBillingComponent },
+  { path: 'organization/:organization-id/settings/general', component: OrganizationSettingGeneralComponent, canActivate: [AuthGuard] },
+  { path: 'organization/:organization-id/settings/users', component: OrganizationSettingUsersComponent, canActivate: [AuthGuard] },
+  { path: 'organization/:organization-id/settings/workspaces', component: OrganizationSettingWorkspacesComponent, canActivate: [AuthGuard] },
+  { path: 'organization/:organization-id/settings/usage', component: OrganizationSettingUsageComponent, canActivate: [AuthGuard] },
+  { path: 'organization/:organization-id/settings/billing', component: OrganizationSettingBillingComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

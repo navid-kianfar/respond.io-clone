@@ -83,6 +83,8 @@ import {LocalDatePipe} from "./pipes/local-date.pipe";
 import {FilterPipe} from "./pipes/filter.pipe";
 import {EnterToBrPipe} from "./pipes/enter-to-br.pipe";
 import {CulturedDatePipe} from "./pipes/cultured-date.pipe";
+import {AnonymousGuard} from "./guards/anonymous.guard";
+import {AuthGuard} from "./guards/auth.guard";
 
 @NgModule({
   declarations: [
