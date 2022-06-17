@@ -34,6 +34,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatRippleModule} from "@angular/material/core";
 import { ForgotComponent } from './pages/account/forgot/forgot.component';
 import { ProfileSideBarComponent } from './components/layout/profile-side-bar/profile-side-bar.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -67,13 +68,14 @@ import { ProfileSideBarComponent } from './components/layout/profile-side-bar/pr
     ForgotComponent,
     ProfileSideBarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatRippleModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatRippleModule,
+        MatMenuModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

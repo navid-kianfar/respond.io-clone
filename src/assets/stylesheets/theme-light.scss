@@ -146,7 +146,7 @@
           .centered-box-content {
             background: #fff;
             box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
-            //border-color: #e0e0e0;
+
             .input-wrappers {
               .input-wrapper {
                 .inputs {
@@ -217,6 +217,50 @@
           }
         }
       }
+    }
+  }
+}
+.roxana-menu-wrapper {
+  .roxana-menu-item {
+    .title {
+      &.bold {
+        font-weight: 500;
+      }
+    }
+    .description {
+      color: #888
+    }
+
+    &:hover:not(.no-hover) {
+      background: #f1f1f1;
+    }
+  }
+  .roxana-menu-item-separator {
+    border-color: #e0e0e0;
+  }
+
+  .roxana-menu-item-profile {
+    .row-1 {
+      .name {
+      }
+      .status {
+        border-color: #e0e0e0;
+        background: #fff;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
+
+        .color{
+          width: 10px;
+          height: 10px;
+          background: green;
+          border-radius: 50%;
+        }
+        .text{
+          font-size: 11px;
+        }
+      }
+    }
+    .row-2 {
+      font-size: 11px;
     }
   }
 }

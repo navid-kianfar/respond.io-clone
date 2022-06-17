@@ -38,14 +38,52 @@
       </div>
     </div>
     <div class="filter-by-wrapper">
-      <button mat-flat-button>
+
+      <button [matMenuTriggerFor]="filterMenu" mat-ripple>
         <span>Open</span>
         <i class="rox-icon-chevron-down"></i>
       </button>
-      <button mat-flat-button>
+      <mat-menu #filterMenu="matMenu">
+        <div class="roxana-menu-wrapper no-space">
+          <div class="roxana-menu-item no-hover">
+            <div class="title bold">Filter by</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Open</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Closed</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Snoozed</div>
+          </div>
+        </div>
+      </mat-menu>
+
+      <button [matMenuTriggerFor]="sortMenu"  mat-ripple>
         <span>Newest</span>
         <i class="rox-icon-chevron-down"></i>
       </button>
+      <mat-menu #sortMenu="matMenu">
+        <div class="roxana-menu-wrapper no-space">
+          <div class="roxana-menu-item no-hover">
+            <div class="title bold">Sort by</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Newest Message</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Oldest Message</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Longest Open</div>
+          </div>
+          <div class="roxana-menu-item" mat-ripple>
+            <div class="title">Shortest Open</div>
+          </div>
+        </div>
+      </mat-menu>
+
     </div>
   </div>
   <div class="roxana-content"></div>

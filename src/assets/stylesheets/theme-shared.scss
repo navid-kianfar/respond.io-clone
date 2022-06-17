@@ -183,3 +183,67 @@
     }
   }
 }
+.roxana-menu-wrapper {
+  padding: 5px;
+
+  .roxana-menu-item-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    .row-1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .status {
+        border-radius: 30px;
+        padding: 0 5px;
+        border: 1px solid #000;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .color{
+          width: 10px;
+          height: 10px;
+          background: green;
+          border-radius: 50%;
+        }
+        .text{
+          font-size: 11px;
+        }
+      }
+    }
+    .row-2 {
+      font-size: 11px;
+    }
+  }
+
+  .roxana-menu-item-separator {
+    border-bottom: 1px solid #000;
+  }
+  .roxana-menu-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    .title {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .description {
+      font-size: 12px;
+      font-weight: 300;
+      text-align: justify;
+    }
+  }
+
+  &.no-space {
+    padding: 0;
+    .roxana-menu-item {
+      margin: 0;
+    }
+  }
+}

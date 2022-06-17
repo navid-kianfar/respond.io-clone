@@ -43,7 +43,7 @@
     </div>
 
     <div class="nav-item">
-      <a href="/space/92086/settings">
+      <a href="/account/profile">
         <i class="rox-icon-settings"></i>
       </a>
     </div>
@@ -52,10 +52,43 @@
   <div class="roxana-rav-bar-list">
 
     <div class="nav-item">
-      <a href="javascript:void(0)">
+      <a [matMenuTriggerFor]="userMenu">
         <i class="rox-icon-user"></i>
       </a>
     </div>
+    <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above">
+      <div class="roxana-menu-wrapper no-space">
+        <div class="roxana-menu-item-profile">
+          <div class="row-1">
+            <div class="name">Navid Kianfar</div>
+            <div class="status">
+              <div class="color"></div>
+              <div class="text">Online</div>
+            </div>
+          </div>
+          <div class="row-2">nvd.kianfar@gmail.com</div>
+        </div>
+        <div class="roxana-menu-item" mat-ripple>
+          <div class="title">
+            Set myself as <strong>Busy</strong>
+          </div>
+        </div>
+        <div class="roxana-menu-item-separator"></div>
+        <div routerLink="/account/notifications"
+             class="roxana-menu-item"
+             mat-ripple>
+          <div class="title">Notifications</div>
+        </div>
+        <div routerLink="/organization/123456/settings/billing"
+             class="roxana-menu-item"
+             mat-ripple>
+          <div class="title">Billing</div>
+        </div>
+        <div class="roxana-menu-item" mat-ripple>
+          <div class="title">Logout</div>
+        </div>
+      </div>
+    </mat-menu>
 
     <div class="nav-item">
       <a href="javascript:void(0)">
@@ -64,10 +97,25 @@
     </div>
 
     <div class="nav-item">
-      <a href="javascript:void(0)">
+      <a [matMenuTriggerFor]="helpMenu">
         <i class="rox-icon-help-circle"></i>
       </a>
     </div>
-
+    <mat-menu #helpMenu="matMenu" xPosition="before" yPosition="above">
+      <div class="roxana-menu-wrapper">
+        <div class="roxana-menu-item" mat-ripple>
+          <div class="title">Documentation</div>
+          <div class="description">Learn more about roxana.io from our handy documentation</div>
+        </div>
+        <div class="roxana-menu-item" mat-ripple>
+          <div class="title">Request a Feature</div>
+          <div class="description">Suggest a feature and let your voice be heard</div>
+        </div>
+        <div class="roxana-menu-item" mat-ripple>
+          <div class="title">Get Support</div>
+          <div class="description">Having issues? Our customer team is ready to help!</div>
+        </div>
+      </div>
+    </mat-menu>
   </div>
 </div>

@@ -1,0 +1,9 @@
+.roxana-profile-sidebar {
+  .key-value {
+    &:not(.no-hover) {
+      .key {
+        padding-inline-start: 20px;
+      }
+    }
+  }
+}
