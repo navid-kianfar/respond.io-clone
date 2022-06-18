@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.appState.navigation.menus = [
       { url: '/space/92086/dashboard', icon: 'rox-icon-pie-chart' },
-      { url: '/space/92086/message', icon: 'rox-icon-message-square' },
+      { url: '/space/92086/message/all', icon: 'rox-icon-message-square' },
       { url: '/space/92086/contact', icon: 'rox-icon-users' },
       { url: '/space/92086/broadcast', icon: 'rox-icon-radio' },
       { url: '/space/92086/workflows', icon: 'rox-icon-command' },

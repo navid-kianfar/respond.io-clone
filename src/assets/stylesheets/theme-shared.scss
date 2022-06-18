@@ -1,9 +1,35 @@
+@mixin online-status {
+  .online-status {
+    border-radius: 30px;
+    padding: 0 5px;
+    border: 1px solid #000;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .color{
+      width: 10px;
+      height: 10px;
+      background: green;
+      border-radius: 50%;
+    }
+    .text{
+      font-size: 11px;
+    }
+  }
+}
+
 .fill-height {
   height: 100%;
 }
+.fill-width {
+  width: 100%;
+}
+.w-250 { width: 250px; }
 .roxana-page {
   display: flex;
   flex-grow: 1;
+  width: calc(100vw - 55px);
   height: 100vh;
   .roxana-column {
     display: flex;
@@ -185,6 +211,7 @@
 }
 .roxana-menu-wrapper {
   padding: 5px;
+  @include online-status;
 
   .roxana-menu-item-profile {
     display: flex;
@@ -197,24 +224,6 @@
       .name {
         font-size: 13px;
         font-weight: 500;
-      }
-      .status {
-        border-radius: 30px;
-        padding: 0 5px;
-        border: 1px solid #000;
-        width: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .color{
-          width: 10px;
-          height: 10px;
-          background: green;
-          border-radius: 50%;
-        }
-        .text{
-          font-size: 11px;
-        }
       }
     }
     .row-2 {
@@ -244,6 +253,97 @@
     padding: 0;
     .roxana-menu-item {
       margin: 0;
+    }
+  }
+}
+.roxana-main {
+  display: flex;
+  flex-grow: 1;
+}
+.roxana-content {
+  display: flex;
+  flex-grow: 1;
+  @include online-status;
+  .online-status {
+    padding: 5px;
+    width: 90px;
+  }
+  .setting-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 40px;
+    .header {
+      .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .description {
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      border-bottom: 1px solid #000000;
+    }
+    .forms {
+      padding-top: 30px;
+      .form-input {
+        margin-bottom: 20px;
+        .title {
+          font-size: 12px;
+          font-weight: 500;
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+
+          i {
+            font-size: 16px;
+            margin-inline-start: 10px;
+            cursor: pointer;
+          }
+        }
+        input {
+          border: none;
+          outline: none;
+          background: none;
+          border-bottom: 1px solid #000000;
+          padding: 5px 0;
+          width: 100%;
+        }
+        .validation {
+          display: flex;
+          flex-direction: row-reverse;
+          visibility: hidden;
+          font-size: 10px;
+          font-weight: 500;
+        }
+
+        &.error {
+          .validation {
+            visibility: visible;
+          }
+          input {
+            border-bottom-width: 2px;
+          }
+        }
+
+        &.focus {
+          input {
+            border-bottom-width: 2px;
+          }
+        }
+      }
+
+      .submit {
+        button {
+          border: none;
+          outline: none;
+          padding: 10px 15px;
+          border-radius: 20px;
+          font-size: 13px;
+        }
+      }
     }
   }
 }

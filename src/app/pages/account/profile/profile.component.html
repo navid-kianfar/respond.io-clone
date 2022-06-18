@@ -2,5 +2,94 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content"></div>
+  <div class="roxana-content">
+
+    <div class="setting-layout">
+
+      <div class="header">
+        <div class="title">Profile</div>
+        <div class="description">
+          Manage your profile and sign-in details.
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="forms">
+
+              <div class="form-input error">
+                <div class="title">First Name</div>
+                <input type="text" placeholder="enter your name">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input focus">
+                <div class="title">Last Name</div>
+                <input type="text" placeholder="enter your last name">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>New Password</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <input type="text" placeholder="New Password">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">Confirm New Password</div>
+                <input type="text" placeholder="Confirm New Password">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="submit">
+                <button mat-ripple>SAVE PROFILE</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="profile-updates">
+              <div class="avatar">
+                <div class="preview">
+                  <i class="rox-icon-user"></i>
+                </div>
+                <div class="edit">
+                  <i class="rox-icon-camera"></i>
+                </div>
+              </div>
+
+              <h3>Navid Kianfar</h3>
+              <h4>nvd.kianfar@gmail.com</h4>
+
+              <button [matMenuTriggerFor]="onlineMenu" class="online-status">
+                <span class="color"></span>
+                <span class="text">Online</span>
+                <i class="rox-icon-chevron-down"></i>
+              </button>
+
+              <mat-menu #onlineMenu="matMenu">
+                <div class="roxana-menu-wrapper no-space">
+                  <div class="roxana-menu-item" mat-ripple>
+                    <div class="title">Online</div>
+                  </div>
+                  <div class="roxana-menu-item" mat-ripple>
+                    <div class="title">Busy</div>
+                  </div>
+                  <div class="roxana-menu-item" mat-ripple>
+                    <div class="title">Offline</div>
+                  </div>
+                </div>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>

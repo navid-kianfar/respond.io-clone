@@ -66,8 +66,10 @@ const routes: Routes = [
   { path: 'account/profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'account/notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
 
+  { path: 'space/:space-id/message/:section', component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: 'space/:space-id/message/:section/:chat-id', component: MessagesComponent, canActivate: [AuthGuard] },
+
   { path: 'space/:space-id/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'space/:space-id/message', component: MessagesComponent, canActivate: [AuthGuard] },
   { path: 'space/:space-id/contact', component: ContactsComponent, canActivate: [AuthGuard] },
   { path: 'space/:space-id/broadcast', component: BroadcastComponent, canActivate: [AuthGuard] },
   { path: 'space/:space-id/workflows', component: WorkflowsComponent, canActivate: [AuthGuard] },

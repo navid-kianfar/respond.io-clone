@@ -1,3 +1,22 @@
+@mixin online-status {
+  .online-status {
+    border-color: #e0e0e0;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
+
+    .color {
+      width: 10px;
+      height: 10px;
+      background: green;
+      border-radius: 50%;
+    }
+
+    .text {
+      font-size: 11px;
+    }
+  }
+}
+
 .roxana-light {
   --v-anchor-base: #448aff;
   --v-primary-base: #448aff;
@@ -81,57 +100,70 @@
   --v-base-grey-darken2: #b5b5b5;
   --v-base-grey-darken3: #9a9a9a;
   --v-base-grey-darken4: #808080;
-  --v-base-black: rgba(0,0,0,.87);
+  --v-base-black: rgba(0, 0, 0, .87);
 
   &.roxana-application {
     background: #fff;
     color: var(--v-base-black);
+
     .roxana-application-wrapper {
       .roxana-layout {
         .roxana-rav-bar {
           background: var(--v-base-grey-base);
+
           .nav-avatar {
             button {
               background: #a9dbff;
+
               span {
                 color: #3284e7;
               }
             }
           }
+
           .nav-item {
             a {
               i {
                 color: var(--v-base-black);
               }
             }
+
             &.selected {
               background: var(--v-base-grey-lighten0);
+
               i {
                 color: var(--v-primary-base);
               }
             }
+
             &:hover {
               background: var(--v-base-grey-darken1);
             }
           }
         }
+
         .roxana-column {
           background: #f5f5f5;
           border-color: #e0e0e0;
+
           .key-value {
             &.selected {
               background: #eaeaea;
+
               i {
                 color: var(--v-primary-base);
               }
             }
+
             &:hover:not(.no-hover) {
               background: var(--v-base-grey-darken1);
             }
           }
+
           .search-wrapper {
             border-color: #e0e0e0;
             background: #ffffff;
+
             i {
               color: var(--v-base-black);
             }
@@ -141,8 +173,10 @@
             border-color: #e0e0e0;
           }
         }
+
         .roxana-centered-box {
           background-color: #f2f2f2;
+
           .centered-box-content {
             background: #fff;
             box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
@@ -151,12 +185,15 @@
               .input-wrapper {
                 .inputs {
                   border-color: #e0e0e0;
+
                   i {
                     color: #000;
                   }
+
                   input {
                   }
                 }
+
                 .validation {
                   color: var(--v-error-base);
                 }
@@ -164,9 +201,11 @@
                 &.error {
                   .inputs {
                     border-color: var(--v-error-base);
+
                     i {
                       color: var(--v-error-base);
                     }
+
                     input {
                       color: var(--v-error-base);
                     }
@@ -174,6 +213,7 @@
                 }
               }
             }
+
             .action-wrappers {
               button {
                 background: var(--v-anchor-base);
@@ -181,10 +221,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                box-shadow:
-                  0 3px 1px -2px rgba(0,0,0,.2),
-                  0 2px 2px 0 rgba(0,0,0,.14),
-                  0 1px 5px 0 rgba(0,0,0,.12);
+                box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+                0 2px 2px 0 rgba(0, 0, 0, .14),
+                0 1px 5px 0 rgba(0, 0, 0, .12);
 
                 i {
                   font-size: 25px;
@@ -201,28 +240,126 @@
                 }
               }
             }
+
             .action-separator {
               color: #9e9e9e;
               caret-color: #9e9e9e;
+
               .text {
                 background: #fff;
+
                 &:before {
                   border-color: #ccc;
                 }
               }
             }
+
             .action-note {
               color: var(--v-base-grey-darken2);
             }
           }
         }
+
+        .roxana-content {
+          @include online-status;
+          .setting-layout {
+            .header {
+              .title {
+              }
+
+              .description {
+                color: #757575;
+              }
+
+              border-color: #e0e0e0;
+            }
+
+            .forms {
+              .form-input {
+                .title {
+                }
+
+                input {
+                  border-color: #e0e0e0;
+                }
+
+                .validation {
+                }
+
+                &.error {
+                  .title, .validation {
+                    color: var(--v-error-base);
+                  }
+                  input {
+                    color: var(--v-error-base);
+                    border-bottom-color: var(--v-error-base);
+                  }
+                }
+
+                &.focus {
+                  .title {
+                    color: var(--v-primary-base);
+                  }
+                  input {
+                    border-bottom-color: var(--v-primary-base);
+                  }
+                }
+              }
+
+              .submit {
+                button {
+                  background: var(--v-anchor-base);
+                  color: #ffffff;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+                  0 2px 2px 0 rgba(0, 0, 0, .14),
+                  0 1px 5px 0 rgba(0, 0, 0, .12);
+
+                  i {
+                    font-size: 25px;
+                    margin-inline-end: 10px;
+                  }
+
+                  span {
+                    font-size: 15px;
+                    font-weight: 300;
+                  }
+
+                  &:disabled {
+                    background: var(--v-base-grey-darken1);
+                  }
+                }
+              }
+            }
+          }
+        }
       }
+
       .app-loading {
         background-color: var(--v-info-darken2);
       }
     }
+
+    .roxana-pages-profile {
+      .profile-updates {
+        .avatar {
+          box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+          0 2px 2px 0 rgba(0, 0, 0, .14),
+          0 1px 5px 0 rgba(0, 0, 0, .12);
+        }
+        h3 {
+
+        }
+        h4 {
+          color: var(--v-base-grey-darken2);
+        }
+      }
+    }
   }
 }
+
 .roxana-menu-wrapper {
   .roxana-menu-item {
     .title {
@@ -230,6 +367,7 @@
         font-weight: 500;
       }
     }
+
     .description {
       color: #888
     }
@@ -238,30 +376,19 @@
       background: #f1f1f1;
     }
   }
+
   .roxana-menu-item-separator {
     border-color: #e0e0e0;
   }
+
+  @include online-status;
 
   .roxana-menu-item-profile {
     .row-1 {
       .name {
       }
-      .status {
-        border-color: #e0e0e0;
-        background: #fff;
-        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
-
-        .color{
-          width: 10px;
-          height: 10px;
-          background: green;
-          border-radius: 50%;
-        }
-        .text{
-          font-size: 11px;
-        }
-      }
     }
+
     .row-2 {
       font-size: 11px;
     }
