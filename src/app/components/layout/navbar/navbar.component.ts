@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppStateService} from "../../../services/core/app-state.service";
+import {IdentityService} from "../../../services/account/identity.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,8 @@ import {AppStateService} from "../../../services/core/app-state.service";
 export class NavbarComponent implements OnInit {
 
   constructor(
-    readonly appState: AppStateService
+    readonly appState: AppStateService,
+    readonly identityService: IdentityService
   ) { }
 
   ngOnInit(): void {
@@ -24,4 +26,8 @@ export class NavbarComponent implements OnInit {
     ];
   }
 
+  async logout() {
+    await this.identityService.logout();
+    setTimeout(() => window.location.href = '/account/login', 300);
+  }
 }

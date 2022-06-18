@@ -18,9 +18,14 @@ export class IdentityService {
     private readonly router: Router,
   ) { }
 
-  logout() {
+  async logout(): Promise<OperationResult<boolean>> {
+    const op = await this.httpService.delete<boolean>('/account/token');
+    if (op.status !== OperationResultStatus.success) {
+      return op;
+    }
     this.storageService.remove(APP_TOKEN_KEY);
-    this.router.navigateByUrl('/account/profile')
+    this.router.navigateByUrl('/account/profile');
+    return op;
   }
 
   async load(): Promise<OperationResult<IdentityProfileDto>> {
@@ -29,7 +34,7 @@ export class IdentityService {
       if (op.status === OperationResultStatus.success) {
         this.appState.profile = op.data;
       } else {
-        this.logout();
+        await this.logout();
       }
       return op;
     }
