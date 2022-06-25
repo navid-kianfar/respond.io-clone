@@ -2,5 +2,101 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content"></div>
+  <div class="roxana-content">
+
+    <div class="setting-layout">
+
+      <div class="header">
+        <div class="title">Notifications</div>
+        <div class="description">
+          Manage your profile and sign-in details.
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="forms">
+
+              <div class="form-input">
+                <div class="title">
+                  <span>Sound Notifications</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <mat-select [ngModel]="3">
+                  <mat-option *ngFor="let opt of soundOptions" [value]="opt.value">
+                    {{opt.text | translate }}
+                  </mat-option>
+                </mat-select>
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>Desktop Notifications</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <mat-select [ngModel]="4">
+                  <mat-option *ngFor="let opt of desktopOptions" [value]="opt.value">
+                    {{opt.text | translate }}
+                  </mat-option>
+                </mat-select>
+                <div class="validation">This field is required</div>
+                <div class="description">
+                  Desktop notifications is blocked by your browser.
+                  Click <span class="clickable">here</span> to enable desktop notifications!
+                </div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>Mobile Push Notifications</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <mat-select [ngModel]="4">
+                  <mat-option *ngFor="let opt of mobileOptions" [value]="opt.value">
+                    {{opt.text | translate }}
+                  </mat-option>
+                </mat-select>
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <mat-checkbox color="primary">
+                    Only send mobile notifications when I am Offline
+                  </mat-checkbox>
+<!--                  <span>Only send mobile notifications when I am Offline</span>-->
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <div class="description">
+                  Please login to the <span class="clickable">roxana.io mobile app</span> to enable mobile notifications!
+                </div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>Email Notifications</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <mat-select [ngModel]="4">
+                  <mat-option *ngFor="let opt of emailOptions" [value]="opt.value">
+                    {{opt.text | translate }}
+                  </mat-option>
+                </mat-select>
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="submit">
+                <button mat-ripple>SAVE CHANGES</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>

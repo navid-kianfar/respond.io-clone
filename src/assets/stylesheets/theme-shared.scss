@@ -311,12 +311,18 @@
           padding: 5px 0;
           width: 100%;
         }
+        mat-select {
+          border-bottom: 1px solid #000;
+        }
         .validation {
           display: flex;
           flex-direction: row-reverse;
           visibility: hidden;
           font-size: 10px;
           font-weight: 500;
+        }
+        .description {
+          font-size: 12px;
         }
 
         &.error {

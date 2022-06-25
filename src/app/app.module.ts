@@ -86,6 +86,8 @@ import {CulturedDatePipe} from "./pipes/cultured-date.pipe";
 import {AnonymousGuard} from "./guards/anonymous.guard";
 import {AuthGuard} from "./guards/auth.guard";
 import {FormsModule} from "@angular/forms";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -144,6 +146,8 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     MatSnackBarModule,
     FormsModule,
+    MatCheckboxModule,
+    MatSelectModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

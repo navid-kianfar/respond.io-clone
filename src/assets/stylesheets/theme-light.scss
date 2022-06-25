@@ -283,7 +283,18 @@
                   border-color: #e0e0e0;
                 }
 
+                mat-select {
+                  border-bottom-color: #e0e0e0;
+                }
+
                 .validation {
+                }
+                .description {
+                  color: #aaa;
+                  .clickable {
+                    color: var(--v-anchor-base);
+                    cursor: pointer;
+                  }
                 }
 
                 &.error {
