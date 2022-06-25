@@ -2,5 +2,52 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content"></div>
+  <div class="roxana-content">
+
+    <div class="setting-layout">
+
+      <div class="header">
+        <div class="title">Closing Notes</div>
+        <div class="description">
+          Manage closing notes settings and conversation categories of the workspace.
+        </div>
+      </div>
+
+
+      <div class="forms">
+
+        <div class="form-input">
+          <div class="title">
+            <span>Closing Notes Settings</span>
+            <i class="rox-icon-help-circle"></i>
+          </div>
+          <mat-select [ngModel]="3">
+            <mat-option *ngFor="let opt of notesOptions" [value]="opt.value">
+              {{opt.text | translate }}
+            </mat-option>
+          </mat-select>
+          <div class="validation">This field is required</div>
+        </div>
+
+      </div>
+
+      <div class="paginated-list">
+
+        <div class="toolbar">
+          <div class="actions">
+            <button mat-ripple>
+              + ADD FIELD
+            </button>
+          </div>
+          <div class="searchbar">
+            <i class="rox-icon-search"></i>
+            <input type="text" placeholder="Search files">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>

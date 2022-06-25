@@ -2,5 +2,98 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content"></div>
+  <div class="roxana-content">
+
+    <div class="setting-layout">
+
+      <div class="header">
+        <div class="title">Teams</div>
+        <div class="description">
+          Create and manage teams to group the users in your Workspace.
+        </div>
+      </div>
+
+      <div class="paginated-list">
+
+        <div class="toolbar">
+          <div class="actions">
+            <button mat-ripple>
+              + ADD TEAM
+            </button>
+          </div>
+          <div class="searchbar">
+            <i class="rox-icon-search"></i>
+            <input type="text" placeholder="Search Users">
+            <i class="rox-icon-file-excel"></i>
+          </div>
+        </div>
+
+        <div class="items">
+
+          <div class="item">
+
+            <div class="icon">
+              <i class="rox-icon-users"></i>
+            </div>
+
+            <div class="info">
+              <div class="title">Team 1 fullname</div>
+              <div class="description">team1@email.com</div>
+            </div>
+
+            <div class="expand"></div>
+
+            <div class="status">Pending</div>
+
+            <div class="actions">
+              <button mat-ripple>
+                <i class="rox-icon-stop-circle"></i>
+                <span>REVOKE</span>
+              </button>
+              <button mat-ripple>
+                <i class="rox-icon-pencil2"></i>
+                <span>Edit</span>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="item">
+
+            <div class="icon">
+              <i class="rox-icon-users"></i>
+            </div>
+
+            <div class="info">
+              <div class="title">Team 2 fullname</div>
+              <div class="description">team2@email.com</div>
+            </div>
+
+            <div class="expand"></div>
+
+            <div class="status">7:57 PM</div>
+
+            <div class="actions">
+              <button mat-ripple disabled>
+                <i class="rox-icon-stop-circle"></i>
+                <span>REVOKE</span>
+              </button>
+              <button mat-ripple disabled>
+                <i class="rox-icon-pencil2"></i>
+                <span>Edit</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="pager">
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TimezonesService} from "../../../../services/core/timezones.service";
 
 @Component({
   selector: 'app-workspace-setting-general',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workspace-setting-general.component.scss']
 })
 export class WorkspaceSettingGeneralComponent implements OnInit {
-
-  constructor() { }
+  constructor(readonly timezoneService: TimezonesService) { }
 
   ngOnInit(): void {
   }

@@ -2,5 +2,60 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content"></div>
+  <div class="roxana-content">
+
+    <div class="setting-layout">
+
+      <div class="header">
+        <div class="title">General</div>
+        <div class="description">
+          Change general Workspace-level settings.
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="forms">
+
+              <div class="form-input">
+                <div class="title">Workspace Name</div>
+                <input type="text" placeholder="enter your workspace name">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>User inactivity timeout</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <input type="text" placeholder="enter your last name" value="5">
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="form-input">
+                <div class="title">
+                  <span>Timezone</span>
+                  <i class="rox-icon-help-circle"></i>
+                </div>
+                <mat-select [ngModel]="4">
+                  <mat-option *ngFor="let opt of timezoneService.items" [value]="opt.value">
+                    {{opt.text | translate }}
+                  </mat-option>
+                </mat-select>
+                <div class="validation">This field is required</div>
+              </div>
+
+              <div class="submit">
+                <button mat-ripple>SAVE CHANGES</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
