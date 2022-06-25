@@ -90,6 +90,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import {GridComponent} from "./components/core/grid/grid.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -152,6 +153,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatCheckboxModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatTableModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

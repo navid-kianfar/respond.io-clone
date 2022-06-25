@@ -452,7 +452,7 @@
   .full-header {
     display: flex;
     flex-grow: 1;
-    height: 70px;
+    max-height: 70px;
     border-bottom: 1px solid #000;
     .blocks {
       display: flex;

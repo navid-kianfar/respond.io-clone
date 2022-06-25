@@ -1,5 +1,5 @@
 <div class="roxana-page roxana-pages-contacts">
-  <div class="roxana-content">
+  <div class="roxana-content flex-column">
     <div class="full-header">
       <div class="blocks">
         <div class="block-1">
@@ -26,6 +26,69 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="full-grid">
+      <app-grid
+        [rows]="[{}, {}, {}, {}]"
+        [commander]="commander"
+        [columns]="[
+                'createdTime',
+                'name',
+                'operations'
+              ]"
+      >
+        <ng-container matColumnDef="createdTime">
+          <div
+            style="min-width: 200px; width: 200px"
+
+            *matHeaderCellDef
+          >
+            {{ "CREATED_TIME" | translate }}
+          </div>
+          <div
+            style="min-width: 200px; width: 200px"
+            *matCellDef="let element">
+            {{ element.CreatedDate | localDate: true }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <div
+            style="min-width: 200px; width: 200px"
+
+            *matHeaderCellDef
+          >
+            {{ "NAME" | translate }}
+          </div>
+          <div
+            style="min-width: 200px; width: 200px"
+            *matCellDef="let element">
+            {{ element.Title }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="operations">
+          <div style="min-width: 100px; width: 100px"
+               class="skip-sort expand-column"
+               *matHeaderCellDef>
+            <!--              {{ "OPERATIONS" | translate }}-->
+          </div>
+          <div style="min-width: 100px; width: 100px"
+               class="expand-column"
+               *matCellDef="let element">
+<!--            <div class="operation-options">-->
+<!--              <button (click)="update(element)">-->
+<!--                <i class="ec-iconedit-2"></i>-->
+<!--              </button>-->
+<!--              <button (click)="delete(element)">-->
+<!--                <i class="ec-icontrash-2"></i>-->
+<!--              </button>-->
+<!--              <button (click)="toggle(element)">-->
+<!--                <i class="ec-icon{{ element.Enabled ? 'eye' : 'eye-blocked' }}"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+
+          </div>
+        </ng-container>
+      </app-grid>
     </div>
   </div>
 </div>
