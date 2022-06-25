@@ -1,0 +1,35 @@
+<div class="af-grid" (scroll)="onScroll($event)">
+
+  <ng-container *ngIf="desktop && paint">
+
+    <div class="grid-header" (click)="sort($event, header)" #header>
+      <ng-container
+        [ngTemplateOutlet]="def.headerCell.template"
+        *ngFor="let def of selectedColumns"></ng-container>
+      <div class="fake-scrollbar"></div>
+    </div>
+    <div class="grid-content" #body (scroll)="onBodyScroll(body, header)">
+      <div class="spinner-container" *ngIf="isLoading">
+<!--        <app-waiting></app-waiting>-->
+      </div>
+      <div *ngFor="let row of dataSource.data; let idx = index"
+           [class.selected]="selectedRowIndex === idx"
+           (click)="selectRow(idx)" class="grid-row">
+        <ng-container *ngFor="let def of selectedColumns"
+                      [ngTemplateOutletContext]="{$implicit: row}"
+                      [ngTemplateOutlet]="def.cell.template"></ng-container>
+      </div>
+    </div>
+
+  </ng-container>
+  <div class="grid-footer">
+    <mat-paginator
+      [hidden]="showFooter === false"
+      [disabled]="isLoading"
+      (page)="pageChange($event)"
+      showFirstLastButtons
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[10, 50, 100, 150, 200]"
+    ></mat-paginator>
+  </div>
+</div>

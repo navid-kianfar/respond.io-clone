@@ -9,11 +9,11 @@ export interface GridFilter {
 }
 
 export interface GridResult<T> {
-  TotalPages: number;
-  TotalItems: number;
-  Page: number;
-  PageSize: number;
-  Items: T[];
+  totalPages: number;
+  totalItems: number;
+  page: number;
+  pageSize: number;
+  items: T[];
 }
 
 export interface GridCommand<T> {

@@ -88,6 +88,8 @@ import {AuthGuard} from "./guards/auth.guard";
 import {FormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
+import {GridComponent} from "./components/core/grid/grid.component";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -135,6 +137,7 @@ import {MatSelectModule} from "@angular/material/select";
     FilterPipe,
     EnterToBrPipe,
     CulturedDatePipe,
+    GridComponent
   ],
   imports: [
     BrowserModule,
@@ -148,6 +151,7 @@ import {MatSelectModule} from "@angular/material/select";
     FormsModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatPaginatorModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),
