@@ -351,6 +351,103 @@
         }
       }
     }
+
+    .paginated-list {
+      display: flex;
+      flex-direction: column;
+      .toolbar {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .actions {
+          button {
+            border: none;
+            outline: none;
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+          }
+        }
+        .searchbar {
+          display: flex;
+          align-items: center;
+          i {
+            margin-inline-end: 5px;
+            font-size: 22px;
+          }
+          input {
+            margin-inline-end: 5px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #000;
+          }
+        }
+      }
+      .items {
+        display: flex;
+        flex-direction: column;
+        .item {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #000000;
+          padding: 5px;
+          margin-bottom: 5px;
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-inline-end: 15px;
+            i {
+              font-size: 30px;
+            }
+          }
+          .info {
+            display: flex;
+            flex-direction: column;
+            margin-inline-end: 15px;
+            .title {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            .description {
+              font-size: 12px;
+              margin-bottom: 5px;
+            }
+          }
+          .expand {
+            display: flex;
+            flex-grow: 1;
+          }
+          .status {
+            margin-inline-end: 15px;
+          }
+          .actions {
+            display: flex;
+            button {
+              cursor: pointer;
+              border: none;
+              outline: none;
+              padding: 5px 15px;
+              border-radius: 20px;
+              font-size: 13px;
+              display: flex;
+              align-items: center;
+              margin-inline-end: 5px;
+
+              i {
+                margin-inline-end: 5px;
+              }
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 .app-loading {
