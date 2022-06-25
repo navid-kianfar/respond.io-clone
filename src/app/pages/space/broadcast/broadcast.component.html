@@ -1,1 +1,54 @@
-<p>broadcast works!</p>
+<div class="roxana-page roxana-pages-broadcast">
+  <div class="roxana-content">
+    <div class="full-header">
+      <div class="blocks">
+        <div class="block-1">
+          <div class="section">
+            <button [matMenuTriggerFor]="typeMenu" mat-ripple>
+              <span>SCHEDULED</span>
+              <i class="rox-icon-chevron-down"></i>
+            </button>
+            <mat-menu #typeMenu="matMenu">
+              <div class="roxana-menu-wrapper no-space">
+                <div class="roxana-menu-item" mat-ripple>
+                  <div class="title">Calendar</div>
+                </div>
+                <div class="roxana-menu-item" mat-ripple>
+                  <div class="title">Scheduled</div>
+                </div>
+                <div class="roxana-menu-item" mat-ripple>
+                  <div class="title">History</div>
+                </div>
+              </div>
+            </mat-menu>
+          </div>
+          <div class="actions">
+            <button mat-ripple>
+              + ADD BROADCAST
+            </button>
+          </div>
+        </div>
+        <div class="block-2">
+          <div *ngIf="showSearch" class="search-box">
+            <input type="text" placeholder="Search contacts">
+          </div>
+          <div class="actions">
+            <i (click)="showSearch = !showSearch" class="rox-icon-search"></i>
+            <i class="rox-icon-filter"></i>
+            <i [matMenuTriggerFor]="moreMenu" class="rox-icon-menu"></i>
+          </div>
+          <mat-menu #moreMenu="matMenu">
+            <div class="roxana-menu-wrapper no-space">
+              <div class="roxana-menu-item" mat-ripple>
+                <div class="title">Export Excel</div>
+              </div>
+              <div class="roxana-menu-item" mat-ripple>
+                <div class="title">Customize columns</div>
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

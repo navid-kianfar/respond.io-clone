@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workflows.component.scss']
 })
 export class WorkflowsComponent implements OnInit {
-
+  showSearch: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

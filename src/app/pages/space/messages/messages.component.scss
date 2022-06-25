@@ -37,4 +37,114 @@
       padding: 5px 10px;
     }
   }
+
+  .conversations-wrapper {
+    .loading-wrapper {
+      .loading-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background: gray;
+      }
+      .loading-item {
+        border-bottom: 2px solid #000000;
+        padding: 12px 16px 4px;
+        display: flex;
+        flex-direction: column;
+        .row-1 {
+          display: flex;
+          align-items: center;
+          flex-grow: 1;
+          margin-bottom: 10px;
+          .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #000000;
+            margin-inline-end: 10px;
+          }
+          .text-1 {
+            display: flex;
+            width: 100px;
+            height: 10px;
+            border-radius: 20px;
+            background: #000000;
+          }
+          .text-2 {
+            display: flex;
+            width: 50px;
+            height: 10px;
+            border-radius: 20px;
+            background: #000000;
+          }
+          .expand {
+            display: flex;
+            flex-grow: 1;
+          }
+        }
+        .row-2 {
+          display: flex;
+          align-items: center;
+          .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #000000;
+            margin-inline-start: 10px;
+          }
+          .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+          }
+          .text-1, .text-2 {
+            display: flex;
+            width: 100%;
+            height: 10px;
+            border-radius: 20px;
+            background: #000000;
+            margin-bottom: 10px;
+          }
+          .expand {}
+        }
+      }
+    }
+  }
+
+  .no-channels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    .wraper {
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .icon {
+      i {
+        font-size: 120px;
+      }
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    h5 {
+
+    }
+
+    button {
+      padding: 5px 10px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+    }
+  }
 }
