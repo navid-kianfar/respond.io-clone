@@ -505,6 +505,79 @@
       }
     }
   }
+  .full-grid {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+.af-grid {
+
+  .w-100 {
+    min-width: 100px;
+    width: 100px;
+  }
+  .w-200 {
+    min-width: 200px;
+    width: 200px;
+  }
+
+  .grid-header {
+    display: flex;
+    border-bottom: 1px solid #000;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: pointer;
+
+    .grid-column {
+      font-weight: 600;
+      padding: 10px;
+      border-inline-end: 1px solid #000;
+      &.operations {
+        border-color: transparent;
+      }
+    }
+
+    .expand-column {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .fake-scrollbar {
+      width: 20px;
+      height: 20px;
+      display: flex;
+    }
+  }
+
+  .grid-content {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: scroll;
+
+    .grid-row {
+      display: flex;
+      border-bottom: 1px solid #000;
+
+      .grid-cell {
+        padding: 10px;
+        border-inline-end: 1px solid #000;
+        &.operations {
+          border-color: transparent;
+        }
+      }
+
+      &.selected {
+        background: #fcdcb4 !important;
+      }
+    }
+  }
+
+  .grid-footer {
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .app-loading {
   height: 100vh;

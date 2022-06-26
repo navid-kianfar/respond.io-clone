@@ -506,6 +506,36 @@
         }
       }
     }
+
+
+    .af-grid {
+      .grid-header {
+        border-color: #e0e0e0;
+
+        .grid-column {
+          border-color: #e0e0e0;
+          &.operations {
+            border-color: transparent;
+          }
+        }
+      }
+
+      .grid-content {
+        .grid-row {
+          border-color: #e0e0e0;
+          .grid-cell {
+            border-color: #e0e0e0;
+          }
+          &.selected {
+            background: #fcdcb4 !important;
+          }
+        }
+      }
+
+      .grid-footer {
+        border-color: #e0e0e0;
+      }
+    }
   }
 }
 

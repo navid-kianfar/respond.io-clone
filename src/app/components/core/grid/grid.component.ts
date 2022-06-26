@@ -156,20 +156,22 @@ export class GridComponent<T>
     }
 
     if (!this.parentElement) {
-      this.parentElement = findAncestor(grid, 'card-body') ||
+      this.parentElement = findAncestor(grid, 'full-grid') ||
         this.elementRef.nativeElement.parentElement;
       this.resizeListener = ResizeSensor(this.parentElement, (e: any) => {
-        setTimeout(() => this.repaintColumns(), 300);
+        setTimeout(() => this.repaintColumns(), 50);
       });
     }
 
     const innerSize = innerDimensions(this.parentElement);
     grid.style.maxWidth = innerSize.width + 'px';
     grid.style.width = innerSize.width + 'px';
+    grid.style.maxHeight = innerSize.height + 'px';
+    grid.style.height = innerSize.height + 'px';
     this.selectedColumns = (columns || this.columns || []).map((c: string) => {
       return this.columnDefs.find(i => i.name === c);
     });
-    setTimeout(() => this.resizeRows(), 500);
+    setTimeout(() => this.resizeRows(), 50);
   }
 
   resizeRows() {
@@ -177,25 +179,38 @@ export class GridComponent<T>
     const grid = this.elementRef.nativeElement.querySelector('.af-grid');
     grid.style.maxWidth = innerSize.width + 'px';
     grid.style.width = innerSize.width + 'px';
-    const row = grid.querySelector('.grid-header');
+    grid.style.maxHeight = innerSize.height + 'px';
+    grid.style.height = innerSize.height + 'px';
+
+    const gridHeader = grid.querySelector('.grid-header');
+    const gridFooter = grid.querySelector('.grid-footer');
+    const gridContent = grid.querySelector('.grid-content');
+
     grid.querySelectorAll('.grid-content .grid-row').forEach((r: any) => {
-      r.style.width = row.scrollWidth + 'px';
+      r.style.width = gridHeader.scrollWidth + 'px';
     });
 
-
-    const headerHeight = 45;
-    const footerHeight = 55;
-    const minHeight = 350;
-    let maxHeight = 550;
     const bound = this.parentElement.getBoundingClientRect();
-    const minRequiredHeight = headerHeight + footerHeight + minHeight;
-    const remaining = window.innerHeight - (bound.top + minRequiredHeight) - 80;
-    if (remaining > 0 && (remaining < (maxHeight - minHeight))) {
-      maxHeight = minHeight + remaining;
-    } else {
-      maxHeight = minHeight;
-    }
-    grid.querySelector('.grid-content').style.maxHeight = maxHeight + 'px';
+    const headerBound = gridHeader.getBoundingClientRect();
+    const footerBound = gridFooter.getBoundingClientRect();
+
+    const headerHeight = headerBound.height;
+    const footerHeight = footerBound.height;
+
+    const minHeight = 350;
+    let maxHeight = innerSize.height - headerHeight - footerHeight;
+
+    // const minRequiredHeight = headerHeight + footerHeight + minHeight;
+    // const remaining = window.innerHeight - (bound.top + minRequiredHeight);
+    //
+    // if (remaining > 0 && (remaining < (maxHeight - minHeight))) {
+    //   maxHeight = minHeight + remaining;
+    // } else {
+    //   maxHeight = minHeight;
+    // }
+
+    gridContent.style.maxHeight = maxHeight + 'px';
+    gridContent.style.minHeight = maxHeight + 'px';
   }
 
   onScroll($event: any) {

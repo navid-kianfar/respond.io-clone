@@ -1,4 +1,10 @@
 {
+  "PAGINATOR_FIRST": "First",
+  "PAGINATOR_LAST": "Last",
+  "PAGINATOR_NEXT": "Next",
+  "PAGINATOR_OF": "Show {0} to {1} of {2}",
+  "PAGINATOR_PER_PAGE": "Items per page",
+  "PAGINATOR_PREV": "Prev",
   "APP_NAME": "ROXANA.IO",
   "SIGNIN_TO_ACCOUNT": "Signin to your account",
   "ENTER_YOUR_EMAIL": "Enter your email address",

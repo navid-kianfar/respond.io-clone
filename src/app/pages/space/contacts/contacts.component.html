@@ -29,7 +29,8 @@
     </div>
     <div class="full-grid">
       <app-grid
-        [rows]="[{}, {}, {}, {}]"
+        backend="/contacts/list-paginated"
+        [backendParams]="{ space: '92086' }"
         [commander]="commander"
         [columns]="[
                 'createdTime',
@@ -38,42 +39,24 @@
               ]"
       >
         <ng-container matColumnDef="createdTime">
-          <div
-            style="min-width: 200px; width: 200px"
-
-            *matHeaderCellDef
-          >
+          <div class="grid-column w-200" *matHeaderCellDef>
             {{ "CREATED_TIME" | translate }}
           </div>
-          <div
-            style="min-width: 200px; width: 200px"
-            *matCellDef="let element">
+          <div class="grid-cell w-200" *matCellDef="let element">
             {{ element.CreatedDate | localDate: true }}
           </div>
         </ng-container>
         <ng-container matColumnDef="name">
-          <div
-            style="min-width: 200px; width: 200px"
-
-            *matHeaderCellDef
-          >
+          <div class="grid-column w-200" *matHeaderCellDef>
             {{ "NAME" | translate }}
           </div>
-          <div
-            style="min-width: 200px; width: 200px"
-            *matCellDef="let element">
+          <div class="grid-cell w-200" *matCellDef="let element">
             {{ element.Title }}
           </div>
         </ng-container>
         <ng-container matColumnDef="operations">
-          <div style="min-width: 100px; width: 100px"
-               class="skip-sort expand-column"
-               *matHeaderCellDef>
-            <!--              {{ "OPERATIONS" | translate }}-->
-          </div>
-          <div style="min-width: 100px; width: 100px"
-               class="expand-column"
-               *matCellDef="let element">
+          <div class="grid-column operations w-200 skip-sort expand-column" *matHeaderCellDef> </div>
+          <div class="grid-column operations w-200 expand-column" *matCellDef="let element">
 <!--            <div class="operation-options">-->
 <!--              <button (click)="update(element)">-->
 <!--                <i class="ec-iconedit-2"></i>-->
