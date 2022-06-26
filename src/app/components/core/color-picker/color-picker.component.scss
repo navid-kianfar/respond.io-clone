@@ -1,0 +1,16 @@
+.af-color-picker {
+  display: flex;
+  align-items: center;
+
+  .preview {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin-inline-end: 5px;
+    border-radius: 5px;
+  }
+
+  input {
+    outline: none;
+  }
+}

@@ -1,0 +1,42 @@
+.af-multi-select {
+  .tag-wrapper {
+    background-color: #f3f6f9;
+    border-color: #f3f6f9;
+    color: #3f4254;
+    transition: color 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 0.9rem 7px;
+    display: flex;
+    min-height: 45px;
+    max-width: 100%;
+    outline: none !important;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    .selected-items {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .item {
+        margin-inline-end: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        background: #dddddd;
+        border-radius: 5px;
+        padding: 5px;
+
+        i {
+          margin-inline-end: 5px;
+        }
+      }
+    }
+  }
+
+  .filter-wrapper {
+    padding: 5px;
+  }
+}

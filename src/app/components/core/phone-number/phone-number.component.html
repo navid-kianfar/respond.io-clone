@@ -1,0 +1,21 @@
+<div
+  class="af-phone-number af-component ltr {{ disabled ? 'disabled' : '' }} {{
+    readonly ? 'readonly' : ''
+  }} {{ focusState }} form-group {{ cssClass }}"
+>
+  <app-country-picker
+    [model]="country"
+    [showCode]="true"
+    [mini]="true"
+    [disabled]="disabled"
+    (picked)="updateCountry($event)"></app-country-picker>
+  <input
+    class="form-control form-control-lg form-control-solid"
+    autocomplete="off"
+    type="text"
+    (paste)="onPaste($event)"
+    [appOnlyNumber]="true"
+    [(ngModel)]="input"
+    [disabled]="disabled"
+    (ngModelChange)="updateNumber($event)">
+</div>

@@ -1,0 +1,18 @@
+<div
+  class="af-auto-complete af-component {{ ltr ? 'ltr' : '' }} {{ disabled ? 'disabled' : ''}} {{ readonly ? 'readonly' : '' }} form-group {{ cssClass}}">
+  <app-tag [pattern]="pattern" [(model)]="model"></app-tag>
+  <button class="trigger-btn" [matMenuTriggerFor]="menu"></button>
+  <mat-menu #menu>
+    <mat-option *ngIf="isLoading" class="is-loading">
+      <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+    </mat-option>
+    <mat-option
+      *ngFor="let item of filtered"
+      (click)="update(item)"
+      class="member-item"
+      [value]="item.value"
+    >
+      <span>{{ item[textField] | translate: true }}</span>
+    </mat-option>
+  </mat-menu>
+</div>

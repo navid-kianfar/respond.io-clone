@@ -4,7 +4,7 @@ import { NavigationDto } from '../../dtos/layout-dtos';
 import {OrganizationDto} from "../../dtos/organization-dtos";
 import {WorkspaceDto} from "../../dtos/workspace-dtos";
 import {StorageService} from "./storage.service";
-import {APP_TOKEN_KEY} from "../../lib/constsnts";
+import {APP_TOKEN_KEY} from "../../lib/constants";
 
 @Injectable({
   providedIn: 'root'

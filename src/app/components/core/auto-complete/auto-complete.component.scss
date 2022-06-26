@@ -1,0 +1,17 @@
+.form-group {
+  margin-bottom: 0 !important;
+}
+
+.member-item {
+  line-height: unset;
+}
+
+.trigger-btn {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  border: none;
+  background: none;
+  position: relative;
+  top: -20px;
+}

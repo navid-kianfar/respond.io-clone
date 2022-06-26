@@ -1,0 +1,9 @@
+// adds breaks to the mat-checkboxes with long labels
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+// rather than center the checkbox, put the checkbox in the first line
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}

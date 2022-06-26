@@ -1,0 +1,41 @@
+<div class="af-multi-select af-component {{ cssClass }}">
+  <div class="tag-wrapper" [matMenuTriggerFor]="menu">
+    <div class="selected-items">
+      <ng-container *ngFor="let item of (items || [])">
+        <div *ngIf="model.indexOf(item[valueField]) !== -1" class="item">
+          <i (click)="remove($event, item)" class="ec-iconx"></i>
+          <span>{{ item[textField] | translate: true}}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <mat-menu #menu="matMenu">
+    <div class="dd-filter-wrapper" *ngIf="filter" (click)="$event.stopPropagation();$event.preventDefault()">
+      <input type="text"
+             [(ngModel)]="filterText"
+             (keyup)="$event.stopPropagation();"
+             (keydown)="$event.stopPropagation();"
+             (keypress)="$event.stopPropagation();"
+             [placeholder]="'FILTER' | translate">
+    </div>
+    <button mat-menu-item *ngIf="items.length === model.length">
+      {{ "LIST_EMPTY" | translate }}
+    </button>
+    <ng-container *ngFor="let item of items | search:[textField, valueField]:filterText">
+      <button
+        *ngIf="model.indexOf(item[valueField]) === -1"
+        mat-menu-item
+        [class.ltr]="ltr"
+        [class.has-description]="item.description"
+        (click)="onPick(item, $event, true)"
+      >
+      <span class="title">{{
+        item[textField || "text"] | translate: true
+        }}</span>
+        <span *ngIf="item.description" class="sub-title">
+        {{ item.description | translate: true }}
+      </span>
+      </button>
+    </ng-container>
+  </mat-menu>
+</div>

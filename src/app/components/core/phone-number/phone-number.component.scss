@@ -1,0 +1,14 @@
+.af-phone-number {
+  max-width: 300px;
+  border-radius: 0.42rem 0 0 0.42rem;
+  display: flex;
+
+  ::ng-deep .app-country-picker {
+    border: none !important;
+    border-radius: 0.42rem 0 0 0.42rem;
+  }
+
+  input {
+    border-radius: 0 0.42rem 0.42rem 0;
+  }
+}

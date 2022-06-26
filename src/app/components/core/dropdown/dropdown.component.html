@@ -1,0 +1,50 @@
+<div class="af-dropdown af-component dropdown {{ cssClass }}">
+  <button
+    [matMenuTriggerFor]="menu"
+    [disabled]="disabled || waiting"
+    [class.focus]="showPlate"
+    class="btn btn-default dropdown-toggle"
+    type="button"
+    (menuOpened)="onPlateOpen(input)"
+  >
+    <span *ngIf="prependIcon" class="prepend-icon">
+      <i class="{{ prependIcon }}"></i>
+    </span>
+    <span class="txt" [class.ltr]="ltr && model !== undefined">
+      {{ text | translate: true}}
+    </span>
+    <span *ngIf="!waiting" class="arrow ec-iconarrow-down-circle"></span>
+    <span *ngIf="waiting" class="arrow ec-iconspinner3 icon-spin"></span>
+  </button>
+  <mat-menu #menu="matMenu">
+    <div class="roxana-menu-wrapper no-space">
+      <div class="dd-filter-wrapper" [hidden]="!filter" (click)="$event.stopPropagation();$event.preventDefault()">
+        <input type="text"
+               #input
+               input-focus
+               [(ngModel)]="filterText"
+               (keyup)="$event.stopPropagation();"
+               (keydown)="$event.stopPropagation();"
+               (keypress)="$event.stopPropagation();"
+               [placeholder]="'FILTER' | translate">
+      </div>
+      <div class="roxana-menu-item" *ngIf="!items.length">
+        <div class="title">{{ "LIST_EMPTY" | translate }}</div>
+      </div>
+      <div class="roxana-menu-item"
+           mat-ripple
+           [class.ltr]="ltr"
+           [class.has-description]="item.description"
+           *ngFor="let item of items | search:[textField, valueField]:filterText:(disabledSort ? '' : textField)"
+           (click)="prePick(item, $event, true)">
+        <ng-container *ngIf="multiple">
+          <app-checkbox (click)="onChecked($event, item)" [model]="item[markField]"></app-checkbox>&nbsp;
+        </ng-container>
+        <div class="title" [title]="item[textField || 'text'] | translate: true">{{ item[textField || "text"] | translate: true}}</div>
+        <div *ngIf="item.description" class="description">
+          {{ item.description | translate: true }}
+        </div>
+      </div>
+    </div>
+  </mat-menu>
+</div>

@@ -1,0 +1,26 @@
+.af-validation-messages {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      color: #ff3547;
+      background-color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 5px;
+
+      span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+:host-context(.dark-theme) .af-validation-messages,
+.af-validation-messages.dark-theme {
+  ul {
+    li {
+      background: none;
+    }
+  }
+}

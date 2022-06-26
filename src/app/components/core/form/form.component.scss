@@ -1,0 +1,49 @@
+.form-group {
+  & > .label-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      font-size: 13px !important;
+      color: #181c32 !important;
+      font-weight: 600 !important;
+      text-align: justify;
+    }
+  }
+
+  margin-bottom: 25px !important;
+}
+
+::ng-deep .af-textbox.form-group,
+::ng-deep .form-element-item {
+  margin-bottom: 0 !important;
+}
+
+::ng-deep input {
+  width: 100% !important;
+}
+
+.actions {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.actions button[color="primary"] {
+  color: #fff;
+}
+
+.icon-spin {
+  font-size: 1rem;
+}
+
+.condition-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .el {
+    display: flex;
+    flex-direction: column;
+    margin-inline-end: 10px;
+    width: 100px;
+  }
+}

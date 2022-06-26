@@ -1,0 +1,32 @@
+<div class="af-component file-picker" [class.small]="small">
+  <div *ngIf="multiple" class="multiple no-select">
+    <div *ngFor="let file of (model || [])" class="image-item">
+      <span class="remove-item" *ngIf="!disabled" (click)="remove(file)"><i class="ec-iconx"></i></span>
+      <img [appThumbnailPreview]="file">
+      <div class="file-name">{{ file.name }}</div>
+    </div>
+    <div *ngIf="!disabled" (click)="filePicker.click()" class="add-item">
+      <i class="ec-iconfile-plus"></i>
+      <span>{{ 'ADD_FILES' | translate}}</span>
+    </div>
+  </div>
+  <div *ngIf="!multiple && (model || current)" class="single">
+    <div class="image-item">
+      <span *ngIf="!disabled" (click)="remove(model)"><i class="ec-iconx"></i></span>
+      <img [appThumbnailPreview]="(current || model)">
+    </div>
+  </div>
+  <button *ngIf="!disabled && !triggerBrowse && !multiple"
+          (click)="filePicker.click()"
+          class="browse btn-option">
+    {{ (browse || 'BROWSE') | translate }}
+  </button>
+  <input
+    #filePicker
+    (change)="onChange($event.target['files'])"
+    [accept]="allowedTypes"
+    [multiple]="multiple"
+    hidden
+    type="file"
+  />
+</div>

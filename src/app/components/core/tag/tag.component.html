@@ -1,0 +1,13 @@
+<div class="af-tag af-component {{ cssClass }}">
+  <div class="tag-wrapper">
+    <div class="selected-items">
+      <ng-container *ngFor="let item of model">
+        <div class="item">
+          <i (click)="remove($event, item)" class="ec-iconx"></i>
+          <span>{{ item }}</span>
+        </div>
+      </ng-container>
+      <input type="text" [(ngModel)]="input" (keydown.enter)="onAdd($event)">
+    </div>
+  </div>
+</div>

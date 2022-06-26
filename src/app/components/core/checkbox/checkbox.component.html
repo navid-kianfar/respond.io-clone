@@ -1,0 +1,8 @@
+<mat-checkbox
+  [disabled]="disabled"
+  [ngModel]="model"
+  (ngModelChange)="update($event)"
+  [color]="color || 'primary'"
+>{{ label | translate: true }}</mat-checkbox
+>
+<div class="summary" *ngIf="summary">{{ summary | translate: true }}</div>

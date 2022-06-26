@@ -4,7 +4,7 @@ import {IdentityProfileDto, IdentitySigninDto} from "../../dtos/account-dtos";
 import {HttpService} from "../core/http.service";
 import {AppStateService} from "../core/app-state.service";
 import {StorageService} from "../core/storage.service";
-import {APP_TOKEN_KEY} from "../../lib/constsnts";
+import {APP_TOKEN_KEY} from "../../lib/constants";
 import {Router} from "@angular/router";
 
 @Injectable({

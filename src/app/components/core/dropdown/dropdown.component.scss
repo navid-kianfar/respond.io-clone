@@ -1,0 +1,64 @@
+.af-dropdown {
+  cursor: pointer;
+
+  > button {
+    width: 100% !important;
+  }
+
+  .dropdown-toggle {
+    background-color: #f3f6f9;
+    border-color: #f3f6f9;
+    color: #3f4254;
+    transition: color 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 0.9rem 7px;
+    display: flex;
+    width: 220px;
+    max-width: 100%;
+    outline: none !important;
+    font-size: 0.8rem;
+
+    .arrow {
+      color: #808080;
+      margin-top: 2px;
+    }
+
+    .prepend-icon {
+      font-size: 1.5em;
+      flex-shrink: 0;
+    }
+
+    .txt {
+      flex-grow: 1;
+      text-align: start;
+      padding: 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .empty {
+      background: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    &.dropdown-toggle::after {
+      content: unset;
+    }
+  }
+
+  .dropdown-toggle:focus {
+    border: 1px solid #80bdff;
+  }
+
+  .filter-wrapper {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,368 @@
+<div class="af-form-elements af-component {{ cssClass }} {{ inline ? 'inline' : ''}} container-fluid">
+  <form class="generated-form-element row">
+    <ng-container *ngFor="let group of elements">
+      <div *ngIf="group.visible !== false" class="{{ columnSize(group) }}">
+        <div class="panel panel-white">
+          <div *ngIf="group.title" class="panel-heading">
+            <h3 class="panel-title">
+              {{ group.title | translate: true }}&nbsp;
+            </h3>
+          </div>
+          <div class="row panel-body">
+            <ng-container *ngFor="let element of group.elements">
+              <div
+                *ngIf="element.config.visible !== false"
+                class="form-element-item form-group col-12 {{
+                  element.params.cssClass || element.config.cssClass || ''
+                }} {{
+                  element.validation &&
+                  element.validation.errors &&
+                  element.validation.errors.length
+                    ? 'has-error'
+                    : ''
+                }}"
+                [ngSwitch]="element.type"
+              >
+
+
+                <div class="label-wrapper">
+
+                  <ng-container *ngIf="element.config.toggleElementCheckbox">
+                    <app-checkbox [label]="element.config.label | translate: true | enterToBr"
+                                  [model]="element.config.showElement"
+                                  (modelChange)="element.config.showElement = $event;toggleElement(element)"
+                    ></app-checkbox>
+                  </ng-container>
+                  <ng-container *ngIf="!element.config.toggleElementCheckbox">
+                    <label *ngIf="element.config.hideLabel !== true" (click)="toggleElement(element)">
+                      {{ element.config.label | translate: true }}
+                      <ng-container *ngIf="element.config.labelPostFix">
+                        &nbsp;{{ element.config.labelPostFix | translate: true }}
+                      </ng-container>
+                    </label>
+                  </ng-container>
+
+                  <label *ngIf="element.config.link && !element.config.link.hide">
+                    <a [innerHTML]="element.config.link.title | translate | enterToBr"
+                       [routerLink]="element.config.link.url"
+                       class="{{ element.config.link.cssClass }}"
+                    ></a>
+                  </label>
+                </div>
+
+                <ng-container *ngIf="element.config.showElement !== false">
+
+                  <!-- Button -->
+                  <ng-container *ngIf="element.type === FormElementType.Button">
+                    <div>
+                      <span *ngIf="element.params.model" class="button-label">
+                        {{ element.params.model }}
+                      </span>
+                      <span
+                        *ngIf="
+                          !element.params.model && element.params.requireModel
+                        "
+                        class="button-label"
+                      >
+                        {{ "NONE_PROVIDED" | translate }}
+                      </span>
+                      <button
+                        [disabled]="checkDisabled(group, element)"
+                        (click)="element.params.action($event)"
+                        mat-stroked-button
+                      >
+                        {{ element.params.label | translate }}
+                      </button>
+                    </div>
+                  </ng-container>
+
+                  <!-- Label -->
+                  <ng-container *ngIf="element.type === FormElementType.Label">
+                    <label class="label-value">{{
+                      element.params.label | translate: true
+                      }}</label>
+                  </ng-container>
+
+                  <!-- Checkbox -->
+                  <ng-container *ngIf="element.type === FormElementType.Checkbox">
+                    <app-checkbox
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [model]="element.params.model"
+                      (modelChange)="
+                        element.params.model = $event;
+                        element.params.onChange($event)
+                      "
+                      [summary]="element.params.summary"
+                      [label]="element.params.label"
+                    ></app-checkbox>
+                  </ng-container>
+
+                  <!-- Switch -->
+                  <ng-container *ngIf="element.type === FormElementType.Switch">
+                    <app-switch
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [model]="element.params.model"
+                      (modelChange)="
+                        element.params.model = $event;
+                        element.params.onChange($event)
+                      "
+                      [afterLabel]="element.params.afterLabel"
+                      [beforeLabel]="element.params.beforeLabel"
+                    ></app-switch>
+                  </ng-container>
+
+                  <!-- Input -->
+                  <ng-container *ngIf="element.type === FormElementType.Input">
+                    <app-input
+                      [growable]="element.params.growable"
+                      [appendIcon]="element.params.appendIcon"
+                      [prependIcon]="element.params.prependIcon"
+                      [label]="element.params.label"
+                      [description]="element.params.description"
+                      [ltr]="element.params.ltr"
+                      [autofocus]="element.params.autofocus"
+                      [placeHolder]="element.params.placeHolder"
+                      [rows]="element.params.rows"
+                      [cssClass]="element.config.cssClass"
+                      [textArea]="element.params.textArea"
+                      [numeric]="element.params.numeric"
+                      [readonly]="element.params.readonly"
+                      [password]="element.params.password"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                    ></app-input>
+                  </ng-container>
+
+                  <!-- Editor -->
+                  <ng-container *ngIf="element.type === FormElementType.Editor">
+                    <app-wysiwyg-editor
+                      [placeHolder]="element.params.placeHolder"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                    ></app-wysiwyg-editor>
+                  </ng-container>
+
+                  <!-- TimePicker -->
+                  <ng-container *ngIf="element.type === FormElementType.TimePicker">
+                    <app-time-picker
+                      [cssClass]="element.params.cssClass"
+                      [appendText]="element.params.appendText"
+                      [prependText]="element.params.prependText"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                    ></app-time-picker>
+                  </ng-container>
+
+                  <!-- Phone Number -->
+                  <ng-container
+                    *ngIf="element.type === FormElementType.PhoneNumber"
+                  >
+                    <app-phone-number
+                      [placeHolder]="element.params.placeHolder"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                    ></app-phone-number>
+                  </ng-container>
+
+                  <!-- Number -->
+                  <ng-container *ngIf="element.type === FormElementType.Number">
+                    <app-number
+                      [prependIcon]="element.params.prependIcon"
+                      [label]="element.params.label"
+                      [autofocus]="element.params.autofocus"
+                      [placeHolder]="element.params.placeHolder"
+                      [cssClass]="element.config.cssClass"
+                      [readonly]="element.params.readonly"
+                      [min]="element.params.min"
+                      [max]="element.params.max"
+                      [disabled]="checkDisabled(group, element)"
+                      [model]="element.params.model"
+                      (modelChange)="
+                      element.params.model = $event;
+                      element.params.onChange($event)"
+                    ></app-number>
+                  </ng-container>
+
+                  <!-- DatePicker -->
+                  <ng-container *ngIf="element.type === FormElementType.DatePicker">
+                    <app-date-picker
+                      [time]="element.params.time"
+                      [multiple]="element.params.multiple"
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [allowNull]="element.params.allowNull"
+                      [culture]="element.params.culture"
+                      [min]="element.params.from"
+                      [fromToday]="element.params.fromToday"
+                      [maxDays]="element.params.maxDays"
+                      [maxMonths]="element.params.maxMonths"
+                      [maxYears]="element.params.maxYears"
+                      [minDays]="element.params.minDays"
+                      [minMonths]="element.params.minMonths"
+                      [minYears]="element.params.minYears"
+                      [pickButton]="element.params.pickButton"
+                      [plateOpen]="element.params.plateOpen"
+                      [tillToday]="element.params.tillToday"
+                      [max]="element.params.to"
+                      [model]="element.params.model"
+                      (modelChange)="element.params.model = $event; element.params.onChange($event)"
+                    ></app-date-picker>
+                  </ng-container>
+
+                  <!-- DropDown -->
+                  <ng-container *ngIf="element.type === FormElementType.DropDown">
+                    <app-dropdown
+                      [filter]="element.params.filter"
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                      [(items)]="element.params.items"
+                      (picked)="element.params.picked($event)"
+                      (loaded)="element.params.loaded($event)"
+                      [multiple]="element.params.multiple"
+                      [except]="element.params.except"
+                      [backendMethod]="element.params.backendMethod"
+                      [acceptOnly]="element.params.acceptOnly"
+                      [autoPickFirst]="element.params.autoPickFirst"
+                      [enumInfo]="element.params.enumInfo"
+                      [ltr]="element.params.ltr"
+                      [disabledSort]="element.params.disabledSort"
+                      [allowClear]="element.params.allowClear"
+                      [backend]="element.params.backend"
+                      [valueField]="element.params.valueField"
+                      [textField]="element.params.textField"
+                      [backendParams]="element.params.backendParams"
+                      [choose]="element.params.choose"
+                      [chooseLabel]="element.params.chooseLabel"
+                      [enum]="element.params.enum"
+                      [enumExcept]="element.params.enumExcept"
+                      [knownList]="element.params.knownList"
+                      [prependIcon]="element.params.prependIcon"
+                      [waiting]="element.params.waiting"
+                    ></app-dropdown>
+                  </ng-container>
+
+                  <!-- AutoComplete -->
+                  <ng-container *ngIf="element.type === FormElementType.AutoComplete">
+                    <app-auto-complete
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                      [(items)]="element.params.items"
+                      (picked)="element.params.picked($event)"
+                      (loaded)="element.params.loaded($event)"
+                      [ltr]="element.params.ltr"
+                      [pattern]="element.params.pattern"
+                      [backend]="element.params.backend"
+                      [valueField]="element.params.valueField"
+                      [textField]="element.params.textField"
+                      [backendParams]="element.params.backendParams"
+                      [waiting]="element.params.waiting"
+                    ></app-auto-complete>
+                  </ng-container>
+
+                  <!-- Tag -->
+                  <ng-container *ngIf="element.type === FormElementType.Tag">
+                    <app-tag
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                      (removed)="element.params.removed($event)"
+                      (added)="element.params.removed($event)"
+                    ></app-tag>
+                  </ng-container>
+
+                  <!-- MultiSelect -->
+                  <ng-container *ngIf="element.type === FormElementType.MultiSelect">
+                    <app-multi-select
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [(model)]="element.params.model"
+                      [(items)]="element.params.items"
+                      (removed)="element.params.removed($event)"
+                      (picked)="element.params.picked($event)"
+                      (loaded)="element.params.loaded($event)"
+                      [except]="element.params.except"
+                      [acceptOnly]="element.params.acceptOnly"
+                      [ltr]="element.params.ltr"
+                      [allowClear]="element.params.allowClear"
+                      [backend]="element.params.backend"
+                      [enum]="element.params.enum"
+                      [enumExcept]="element.params.enumExcept"
+                      [valueField]="element.params.valueField"
+                      [textField]="element.params.textField"
+                      [backendParams]="element.params.backendParams"
+                      [choose]="element.params.choose"
+                      [chooseLabel]="element.params.chooseLabel"
+                      [prependIcon]="element.params.prependIcon"
+                      [waiting]="element.params.waiting"
+                    ></app-multi-select>
+                  </ng-container>
+
+                  <!-- File -->
+                  <ng-container *ngIf="element.type === FormElementType.File">
+                    <app-file
+                      [(model)]="element.params.model"
+                      [preview]="element.params.preview"
+                      [(current)]="element.params.current"
+                      [cssClass]="element.config.cssClass"
+                      [disabled]="checkDisabled(group, element)"
+                      [placeHolder]="element.params.placeHolder"
+                      [backend]="element.params.backend"
+                      [browse]="element.params.browse"
+                      [small]="element.params.small"
+                      [backendParams]="element.params.backendParams"
+                      [clearAfterUpload]="element.params.clearAfterUpload"
+                      [extensions]="element.params.extensions"
+                      [fileType]="element.params.fileType"
+                      [multiple]="element.params.multiple"
+                      [summary]="element.params.summary"
+                      [thumbnail]="element.params.thumbnail"
+                      [thumbnailIcon]="element.params.thumbnailIcon"
+                      [thumbnailLabel]="element.params.thumbnailLabel"
+                      [uploadOnPick]="element.params.uploadOnPick"
+                      (onError)="element.params.onError($event)"
+                      (onFinished)="element.params.onFinished($event)"
+                      (onProgress)="element.params.onProgress($event)"
+                      (onStart)="element.params.onStart($event)"
+                    ></app-file>
+                  </ng-container>
+
+                </ng-container>
+
+                <app-validation
+                  [model]="element.validation.errors"
+                ></app-validation>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </form>
+
+  <div *ngIf="standalone !== true" class="actions">
+    <button
+      [disabled]="actionWaiting || cancelWaiting"
+      *ngIf="actionLabel"
+      (click)="action.emit()"
+      mat-flat-button
+      color="primary"
+    >
+      <i *ngIf="actionWaiting" class="ec-iconspinner3 icon-spin"></i>
+      {{ actionLabel | translate }}
+    </button>
+    &nbsp;
+    <button
+      [disabled]="actionWaiting || cancelWaiting"
+      *ngIf="allowCancel"
+      (click)="cancel.emit()"
+      mat-stroked-button
+    >
+      <i *ngIf="cancelWaiting" class="fa fa-spinner fa-spin"></i>
+      {{ cancelLabel || "CANCEL" | translate }}
+    </button>
+  </div>
+</div>

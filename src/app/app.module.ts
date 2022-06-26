@@ -108,6 +108,29 @@ import {ThumbnailPreviewDirective} from "./directives/core/thumbnail-preview.dir
 import {TimeMaskDirective} from "./directives/core/time-mask.directive";
 import {FocusOnShowDirective} from "./directives/core/focus-on-show.directive";
 import {PlatformModule} from '@angular/cdk/platform';
+import {FormComponent} from "./components/core/form/form.component";
+import {AutoCompleteComponent} from "./components/core/auto-complete/auto-complete.component";
+import {ButtonComponent} from "./components/core/button/button.component";
+import {CheckboxComponent} from "./components/core/checkbox/checkbox.component";
+import {ColorPickerComponent} from "./components/core/color-picker/color-picker.component";
+import {DropdownComponent} from "./components/core/dropdown/dropdown.component";
+import {FileComponent} from "./components/core/file/file.component";
+import {InputComponent} from "./components/core/input/input.component";
+import {MultiSelectComponent} from "./components/core/multi-select/multi-select.component";
+import {NumberComponent} from "./components/core/number/number.component";
+import {TagComponent} from "./components/core/tag/tag.component";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {PhoneNumberComponent} from "./components/core/phone-number/phone-number.component";
+import {ProgressComponent} from "./components/core/progress/progress.component";
+import {RadioComponent} from "./components/core/radio/radio.component";
+import {SwitchComponent} from "./components/core/switch/switch.component";
+import {TimePickerComponent} from "./components/core/time-picker/time-picker.component";
+import {ValidationComponent} from "./components/core/validation/validation.component";
+import {WysiwygEditorComponent} from "./components/core/wysiwyg-editor/wysiwyg-editor.component";
+import {ZonePickerComponent} from "./components/core/zone-picker/zone-picker.component";
+import {ColorPickerModule} from "ngx-color-picker";
+import {CKEditorModule} from "ngx-ckeditor";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [
@@ -168,7 +191,26 @@ import {PlatformModule} from '@angular/cdk/platform';
     ReloadOnParamsChangedDirective,
     ThumbnailPreviewDirective,
     TimeMaskDirective,
-    FocusOnShowDirective
+    FocusOnShowDirective,
+    FormComponent,
+    AutoCompleteComponent,
+    ButtonComponent,
+    CheckboxComponent,
+    ColorPickerComponent,
+    DropdownComponent,
+    FileComponent,
+    InputComponent,
+    MultiSelectComponent,
+    NumberComponent,
+    TagComponent,
+    PhoneNumberComponent,
+    ProgressComponent,
+    RadioComponent,
+    SwitchComponent,
+    TimePickerComponent,
+    ValidationComponent,
+    WysiwygEditorComponent,
+    ZonePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -188,6 +230,10 @@ import {PlatformModule} from '@angular/cdk/platform';
     MatDatepickerModule,
     MatInputModule,
     PlatformModule,
+    MatProgressBarModule,
+    ColorPickerModule,
+    CKEditorModule,
+    MatSlideToggleModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

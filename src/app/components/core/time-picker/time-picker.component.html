@@ -1,0 +1,14 @@
+<div class="af-time-picker {{ cssClass }}">
+  {{prependText | translate}}
+  <input class="time"
+         appTimeMask
+         [disabled]="disabled"
+         [ngModel]="model"
+         (ngModelChange)="updateTime($event)"/>
+  {{appendText}}
+<!--  <mat-menu #timePicker>-->
+<!--    <button *ngFor="let btn of timeValues" (click)="setTime(btn)" mat-menu-item>-->
+<!--      {{ btn.text }}-->
+<!--    </button>-->
+<!--  </mat-menu>-->
+</div>

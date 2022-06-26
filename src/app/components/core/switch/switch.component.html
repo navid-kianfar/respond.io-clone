@@ -1,0 +1,7 @@
+<mat-slide-toggle
+  [disabled]="disabled"
+  [ngModel]="model"
+  (ngModelChange)="update($event)"
+  [color]="color || 'primary'"
+  (click)="checkConfirmation($event)"
+>{{ beforeLabel | translate: true }}</mat-slide-toggle>

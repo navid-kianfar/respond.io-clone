@@ -1,0 +1,56 @@
+<div
+  class="af-textbox af-component {{ ltr ? 'ltr' : '' }} {{
+    disabled ? 'disabled' : ''
+  }} {{ readonly ? 'readonly' : '' }} {{ focusState }} form-group {{
+    cssClass
+  }}"
+>
+  <label *ngIf="label">{{ label | translate: true }}</label>
+  <ng-container *ngIf="!textArea">
+    <div
+      class="input-container {{ prependIcon ? 'prepend-icon' : '' }} {{
+        appendIcon ? 'append-icon' : ''
+      }} {{isPasswordInput ? 'password-toggle' : ''}}"
+    >
+      <i *ngIf="prependIcon" [class]="prependIcon"></i>
+      <input
+        [appOnlyNumber]="numeric"
+        [autofocus]="autofocus"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        [ngModel]="model"
+        (ngModelChange)="onModelChange($event)"
+        [disabled]="disabled"
+        (keydown.enter)="onEnter()"
+        [placeholder]="placeHolder | translate: true"
+        [readonly]="readonly"
+        [type]="password ? 'password' : 'text'"
+        autocomplete="off"
+        class="form-control form-control-solid h-auto "
+      />
+      <i *ngIf="isPasswordInput"
+         (click)="togglePassword()"
+         [class]="password ? 'ec-iconeye1' : 'ec-iconeye-off'"></i>
+
+      <i *ngIf="!isPasswordInput && appendIcon" [class]="appendIcon"></i>
+      <span *ngIf="description">{{description}}</span>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="textArea">
+    <div *ngIf="growable" class="growable-content">{{ model }}</div>
+    <textarea
+      [autofocus]="autofocus"
+      (keydown.enter)="onEnter()"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      [ngModel]="model"
+      (ngModelChange)="onModelChange($event)"
+      [rows]="rows || 3"
+      [disabled]="disabled"
+      [placeholder]="placeHolder | translate: true"
+      [readonly]="readonly"
+      autocomplete="off"
+      class="form-control input-lg no-resize"
+    ></textarea>
+  </ng-container>
+</div>

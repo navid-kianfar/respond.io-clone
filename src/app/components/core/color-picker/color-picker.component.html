@@ -1,0 +1,13 @@
+<div class="af-color-picker form-group {{ cssClass }}">
+  <div class="preview" [style.backgroundColor]="model"></div>
+  <div class="input-container">
+    <input
+      class="form-control form-control-solid h-auto rounded-lg"
+      matInput
+      [placeholder]="placeholder | translate"
+      [value]="model"
+      [colorPicker]="model"
+      (colorPickerChange)="updateModel($event)"
+    />
+  </div>
+</div>

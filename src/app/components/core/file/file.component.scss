@@ -1,0 +1,106 @@
+@mixin item-container {
+  display: flex;
+  flex-grow: 1;
+
+  max-width: 150px;
+  max-height: 150px;
+  min-width: 150px;
+  min-height: 150px;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-inline-end: 10px;
+
+  img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+  }
+}
+
+.file-picker {
+  min-width: 250px !important;
+  .multiple,
+  .single {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .add-item {
+      @include item-container;
+
+      i {
+        font-size: 50px;
+      }
+      span {
+      }
+    }
+    .image-item {
+      @include item-container;
+
+      .remove-item {
+        display: block;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        font-size: 25px;
+        width: 25px;
+        color: #8a8a8a;
+        background: rgb(230, 230, 230, 50%);
+        cursor: pointer;
+
+        i {
+        }
+
+        &:hover {
+          background: #8a8a8a;
+          color: rgb(230, 230, 230, 50%);
+        }
+      }
+
+      .file-name {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+    }
+  }
+
+
+  &.small {
+    .add-item, .image-item {
+      max-width: 100px !important;
+      max-height: 100px !important;
+      min-width: 100px !important;
+      min-height: 100px !important;
+
+      > i {
+        font-size: 20px !important;
+      }
+
+      img {
+        max-width: 100px !important;
+        max-height: 60px !important;
+      }
+
+
+      .remove-item {
+        right: 4px !important;
+        top: 4px !important;
+        font-size: 16px !important;
+        width: 16px !important;
+      }
+    }
+  }
+}
