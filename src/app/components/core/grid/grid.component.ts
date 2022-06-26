@@ -257,7 +257,7 @@ export class GridComponent<T>
     sortOrderIcon.onclick = (e) => {
       e.preventDefault();
     };
-    sortOrderIcon.className = `sort-by-icon ec-iconarrow-${
+    sortOrderIcon.className = `sort-by-icon rox-icon-arrow-${
       sortOrder === 'ASC' ? 'up' : 'down'
     }`;
     for (let counter = 0; counter < headerRow.children.length; counter++) {

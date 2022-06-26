@@ -33,25 +33,70 @@
         [backendParams]="{ space: '92086' }"
         [commander]="commander"
         [columns]="[
-                'createdTime',
                 'name',
+                'email',
+                'phone',
+                'country',
+                'language',
+                'createdTime',
+                'lastMessage',
                 'operations'
               ]"
       >
-        <ng-container matColumnDef="createdTime">
-          <div class="grid-column w-200" *matHeaderCellDef>
-            {{ "CREATED_TIME" | translate }}
-          </div>
-          <div class="grid-cell w-200" *matCellDef="let element">
-            {{ element.CreatedDate | localDate: true }}
-          </div>
-        </ng-container>
         <ng-container matColumnDef="name">
           <div class="grid-column w-200" *matHeaderCellDef>
             {{ "NAME" | translate }}
           </div>
           <div class="grid-cell w-200" *matCellDef="let element">
             {{ element.Title }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "EMAIL" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Email }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "PHONE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Phone }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="country">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "COUNTRY" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Country }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="language">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "LANGUAGE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Language }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="lastMessage">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "LAST_MESSAGE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.LastMessage }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="createdTime">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "CREATED_TIME" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.CreatedDate | localDate: true }}
           </div>
         </ng-container>
         <ng-container matColumnDef="operations">

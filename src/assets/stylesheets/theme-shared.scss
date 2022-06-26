@@ -18,7 +18,14 @@
     }
   }
 }
-
+@mixin no-select {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 .fill-height {
   height: 100%;
 }
@@ -532,6 +539,7 @@
       font-weight: 600;
       padding: 10px;
       border-inline-end: 1px solid #000;
+      @include no-select;
       &.operations {
         border-color: transparent;
       }

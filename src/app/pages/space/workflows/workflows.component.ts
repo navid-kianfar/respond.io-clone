@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {GridCommand} from "../../../lib/grid";
 
 @Component({
   selector: 'app-workflows',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkflowsComponent implements OnInit {
   showSearch: boolean = false;
+  commander = new EventEmitter<GridCommand<any>>();
   constructor() { }
 
   ngOnInit(): void {
