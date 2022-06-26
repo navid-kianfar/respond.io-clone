@@ -1,0 +1,30 @@
+<div class="app-country-picker" [class.mini]="mini">
+  <button [disabled]="disabled" [mat-menu-trigger-for]="countriesMenu" (menuOpened)="onPlateOpen(input)">
+
+    <app-country-flag [code]="selected?.code"></app-country-flag>
+    <span class="text" *ngIf="!mini">{{ selected?.name }}</span>
+    <span class="dial_code" *ngIf="showCode">{{ selected?.dial_code.replace(' ', '') }}</span>
+    <i class="ec-iconchevron-down"></i>
+  </button>
+  <mat-menu #countriesMenu>
+    <div class="countries-menu-list">
+      <ul>
+        <li>
+          <div class="dd-filter-wrapper" (click)="$event.stopPropagation();$event.preventDefault()">
+            <input type="text"
+                   #input
+                   [(ngModel)]="filterText"
+                   (keyup)="$event.stopPropagation();"
+                   (keydown)="$event.stopPropagation();"
+                   (keypress)="$event.stopPropagation();"
+                   [placeholder]="'FILTER' | translate">
+          </div>
+        </li>
+        <li *ngFor="let country of countryService.list | search:['name', 'code', 'dial_code', 'city']:filterText" (click)="pick(country)">
+          <app-country-flag [code]="country.code"></app-country-flag>
+          <span class="name"> {{ country.name }} </span>
+        </li>
+      </ul>
+    </div>
+  </mat-menu>
+</div>

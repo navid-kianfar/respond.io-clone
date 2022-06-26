@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {GridCommand} from "../../../../lib/grid";
 
 @Component({
   selector: 'app-workspace-setting-contact-fields',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workspace-setting-contact-fields.component.scss']
 })
 export class WorkspaceSettingContactFieldsComponent implements OnInit {
+  commander = new EventEmitter<GridCommand<any>>();
 
   constructor() { }
 

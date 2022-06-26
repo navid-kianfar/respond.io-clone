@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {GridCommand} from "../../../../lib/grid";
 
 @Component({
   selector: 'app-workspace-setting-export',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workspace-setting-export.component.scss']
 })
 export class WorkspaceSettingExportComponent implements OnInit {
-
+  commander = new EventEmitter<GridCommand<any>>();
   constructor() { }
 
   ngOnInit(): void {

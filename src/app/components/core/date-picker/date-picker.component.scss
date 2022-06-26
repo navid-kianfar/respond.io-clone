@@ -1,0 +1,15 @@
+.af-date-picker {
+  input {
+    width: 120px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none !important;
+  }
+}
+.date-picker-plate {
+  font-size: 0.8rem;
+  ::ng-deep table {
+    margin: 0;
+  }
+}

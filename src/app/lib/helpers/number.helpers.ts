@@ -4,7 +4,7 @@ const hourTicks = 36000000000;
 const dayTicks = 864000000000;
 
 export class NumberHelpers {
-  static pad(source: number, size): string {
+  static pad(source: number, size: number): string {
     let s = String(source);
     while (s.length < (size || 2)) {
       s = '0' + s;
@@ -32,7 +32,7 @@ export class NumberHelpers {
   static clearNumbers(input: any): string {
     // @ts-ignore
     return input
-      .replace(/[\u0660-\u0669]/g, (c) => {
+      .replace(/[\u0660-\u0669]/g, (c: any) => {
         return c.charCodeAt(0) - 0x0660;
       }) // @ts-ignore
       .replace(/[\u06f0-\u06f9]/g, (c) => {

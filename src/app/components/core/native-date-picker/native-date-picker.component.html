@@ -1,0 +1,43 @@
+<div class="af-date-picker {{ cssClass }}" [class.single]="!range">
+  <ng-container *ngIf="range">
+    <mat-date-range-input
+      [disabled]="disabled"
+      [max]="max"
+      [min]="min"
+      [rangePicker]="picker">
+      <input matStartDate
+             appDateMask
+             (click)="picker.open()"
+             [ngModel]="model"
+             (ngModelChange)="model = $event; modelChange.emit($event)"
+             [placeholder]="'FROM_(DD/MM/YYYY)' | translate">
+      <input matEndDate
+             appDateMask
+             (click)="picker.open()"
+             [ngModel]="modelEnd"
+             (ngModelChange)="modelEnd = $event; modelEndChange.emit($event)"
+             [placeholder]="'TO_(DD/MM/YYYY)' | translate">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </ng-container>
+  <ng-container *ngIf="!range">
+    <input
+      matInput
+      appDateMask
+      [matDatepicker]="picker"
+      [placeholder]="'DD/MM/YYYY'"
+      [max]="max"
+      [min]="min"
+      [ngModel]="model"
+      (ngModelChange)="model = $event; modelChange.emit($event)"
+      [disabled]="disabled"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker
+      #picker
+      (opened)="onOpen()"
+      [panelClass]="'native-date-picker-plate'"
+    ></mat-datepicker>
+  </ng-container>
+</div>

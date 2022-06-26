@@ -91,6 +91,23 @@ import {MatSelectModule} from "@angular/material/select";
 import {GridComponent} from "./components/core/grid/grid.component";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {BoxGridComponent} from "./components/core/box-grid/box-grid.component";
+import {CountryPickerComponent} from "./components/core/country-picker/country-picker.component";
+import {DatePickerComponent} from "./components/core/date-picker/date-picker.component";
+import {NativeDatePickerComponent} from "./components/core/native-date-picker/native-date-picker.component";
+import {CountryFlagComponent} from "./components/core/country-flag/country-flag.component";
+import {FlagedPhoneNumberComponent} from "./components/core/flaged-phone-number/flaged-phone-number.component";
+import {MatInputModule} from "@angular/material/input";
+import {CtrlClickDirective} from "./directives/core/ctrl-click.directive";
+import {GridCellDefDirective} from "./directives/core/grid-cell-def.directive";
+import {OnlyNumberDirective} from "./directives/core/only-number.directive";
+import {ReloadOnParamsChangedDirective} from "./directives/core/reload-on-params-changed.directive";
+import {ThumbnailPreviewDirective} from "./directives/core/thumbnail-preview.directive";
+import {TimeMaskDirective} from "./directives/core/time-mask.directive";
+import {FocusOnShowDirective} from "./directives/core/focus-on-show.directive";
+import {PlatformModule} from '@angular/cdk/platform';
 
 @NgModule({
   declarations: [
@@ -138,7 +155,20 @@ import {MatTableModule} from "@angular/material/table";
     FilterPipe,
     EnterToBrPipe,
     CulturedDatePipe,
-    GridComponent
+    GridComponent,
+    BoxGridComponent,
+    CountryPickerComponent,
+    DatePickerComponent,
+    NativeDatePickerComponent,
+    CountryFlagComponent,
+    FlagedPhoneNumberComponent,
+    CtrlClickDirective,
+    GridCellDefDirective,
+    OnlyNumberDirective,
+    ReloadOnParamsChangedDirective,
+    ThumbnailPreviewDirective,
+    TimeMaskDirective,
+    FocusOnShowDirective
   ],
   imports: [
     BrowserModule,
@@ -154,6 +184,10 @@ import {MatTableModule} from "@angular/material/table";
     MatSelectModule,
     MatPaginatorModule,
     MatTableModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatInputModule,
+    PlatformModule,
     // ServiceWorkerModule.register('pwa-service-worker.js', {
     //   enabled: environment.pwa,
     // }),

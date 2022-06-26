@@ -1,0 +1,64 @@
+.af-date-picker {
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  input {
+    font-size: 12px;
+  }
+
+  &.single {
+    min-width: 250px;
+    display: flex;
+
+    input {
+      display: flex;
+      flex-grow: 1;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      padding: 5px;
+      width: 100% !important;
+      font-size: 0.9rem;
+      max-width: calc(100% - 60px);
+    }
+  }
+
+  ::ng-deep mat-date-range-input {
+    max-width: 310px;
+
+    .mat-date-range-input-start-wrapper {
+      input {
+        top: -8px;
+      }
+    }
+    .mat-date-range-input-end-wrapper {
+      input {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+
+  ::ng-deep .mat-date-range-input-mirror {
+    min-width: 160px !important;
+  }
+}
+
+@media (max-width: 410px) {
+  ::ng-deep mat-date-range-input {
+    max-width: 220px !important;
+  }
+  .mat-date-range-input {
+    max-width: 210px;
+  }
+  ::ng-deep .mat-date-range-input-container {
+    flex-direction: column;
+    align-items: unset !important;
+
+    .mat-date-range-input-start-wrapper,
+    .mat-date-range-input-end-wrapper {
+      max-width: unset !important;
+    }
+  }
+}

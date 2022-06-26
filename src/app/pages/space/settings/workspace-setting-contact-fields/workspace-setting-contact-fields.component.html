@@ -2,7 +2,7 @@
   <div class="roxana-column">
     <app-profile-side-bar></app-profile-side-bar>
   </div>
-  <div class="roxana-content">
+  <div class="roxana-content flex-column">
 
     <div class="setting-layout">
 
@@ -28,6 +28,97 @@
 
       </div>
 
+    </div>
+    <div class="full-grid with-padding">
+      <app-grid
+        backend="/contacts/list-paginated"
+        [backendParams]="{ space: '92086' }"
+        [commander]="commander"
+        [columns]="[
+                'name',
+                'email',
+                'phone',
+                'country',
+                'language',
+                'createdTime',
+                'lastMessage',
+                'operations'
+              ]"
+      >
+        <ng-container matColumnDef="name">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "NAME" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Title }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "EMAIL" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Email }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "PHONE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Phone }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="country">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "COUNTRY" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Country }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="language">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "LANGUAGE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.Language }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="lastMessage">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "LAST_MESSAGE" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.LastMessage }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="createdTime">
+          <div class="grid-column w-200" *matHeaderCellDef>
+            {{ "CREATED_TIME" | translate }}
+          </div>
+          <div class="grid-cell w-200" *matCellDef="let element">
+            {{ element.CreatedDate | localDate: true }}
+          </div>
+        </ng-container>
+        <ng-container matColumnDef="operations">
+          <div class="grid-column operations w-200 skip-sort expand-column" *matHeaderCellDef> </div>
+          <div class="grid-column operations w-200 expand-column" *matCellDef="let element">
+            <!--            <div class="operation-options">-->
+            <!--              <button (click)="update(element)">-->
+            <!--                <i class="ec-iconedit-2"></i>-->
+            <!--              </button>-->
+            <!--              <button (click)="delete(element)">-->
+            <!--                <i class="ec-icontrash-2"></i>-->
+            <!--              </button>-->
+            <!--              <button (click)="toggle(element)">-->
+            <!--                <i class="ec-icon{{ element.Enabled ? 'eye' : 'eye-blocked' }}"></i>-->
+            <!--              </button>-->
+            <!--            </div>-->
+
+          </div>
+        </ng-container>
+      </app-grid>
     </div>
 
   </div>

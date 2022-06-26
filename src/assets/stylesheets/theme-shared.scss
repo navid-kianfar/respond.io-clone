@@ -318,6 +318,16 @@
           padding: 5px 0;
           width: 100%;
         }
+        .radio-list {
+          padding: 10px 0;
+          mat-radio-group {
+            display: flex;
+            flex-direction: column;
+            mat-radio-button {
+              margin-bottom: 10px;
+            }
+          }
+        }
         mat-select {
           border-bottom: 1px solid #000;
         }
@@ -515,6 +525,10 @@
   .full-grid {
     display: flex;
     flex-grow: 1;
+
+    &.with-padding {
+      padding-inline-start: 20px;
+    }
   }
 }
 .af-grid {

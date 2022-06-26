@@ -17,13 +17,17 @@
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
     "@angular/material": "14.0.1",
+    "@angular/material-moment-adapter": "^14.0.3",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "libphonenumber-js": "^1.10.7",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.34",
+    "ngx-device-detector": "^3.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "vanilla-text-mask": "^5.1.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

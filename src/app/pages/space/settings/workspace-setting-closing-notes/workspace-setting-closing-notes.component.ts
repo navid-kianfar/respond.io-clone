@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
+import {GridCommand} from "../../../../lib/grid";
 
 @Component({
   selector: 'app-workspace-setting-closing-notes',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./workspace-setting-closing-notes.component.scss']
 })
 export class WorkspaceSettingClosingNotesComponent implements OnInit {
+  commander = new EventEmitter<GridCommand<any>>();
   notesOptions: any[] = [];
 
   constructor() { }
