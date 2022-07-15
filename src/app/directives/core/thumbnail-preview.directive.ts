@@ -5,7 +5,7 @@ import {FileService} from "../../services/core/file.service";
   selector: '[appThumbnailPreview]',
 })
 export class ThumbnailPreviewDirective implements OnInit, OnChanges {
-  @Input('appThumbnailPreview') file: File | string;
+  @Input('appThumbnailPreview') file: File | string | any;
 
   constructor(
     readonly element: ElementRef,

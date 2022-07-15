@@ -189,7 +189,7 @@
                   <ng-container *ngIf="element.type === FormElementType.DatePicker">
                     <app-date-picker
                       [time]="element.params.time"
-                      [multiple]="element.params.multiple"
+                      [range]="element.params.multiple"
                       [cssClass]="element.config.cssClass"
                       [disabled]="checkDisabled(group, element)"
                       [allowNull]="element.params.allowNull"

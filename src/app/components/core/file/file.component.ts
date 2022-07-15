@@ -37,7 +37,7 @@ export class FileComponent implements OnInit {
   @Input() placeHolder: string;
   @Input() thumbnailLabel: string;
   @Input() thumbnailIcon: string;
-  @Input() model: File | File[];
+  @Input() model: File | File[] | any;
   @Input() triggerBrowse: EventEmitter<void>;
   @Output() onStart = new EventEmitter<void>();
   @Output() onError = new EventEmitter<void>();
